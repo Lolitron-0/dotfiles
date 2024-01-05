@@ -51,89 +51,10 @@ return packer.startup(function(use)
 	use { 'numToStr/Comment.nvim',
 		config = function() require('Comment').setup() end }
 
-	-- use {'nvim-telescope/telescope.nvim', config = function() require("telescope").setup() end}
-
-	use {
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup {
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
-		end
-	}
-
-	use {
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			local dashboard_custom_header13 = {
-				'',
-				' ⡿⠉⠄⠄⠄⠄⠈⠙⠿⠟⠛⠉⠉⠉⠄⠄⠄⠈⠉⠉⠉⠛⠛⠻⢿⣿⣿⣿⣿⣿ ',
-				' ⠁⠄⠄⠄⢀⡴⣋⣵⣮⠇⡀⠄⠄⠄⠄⠄⠄⢀⠄⠄⠄⡀⠄⠄⠄⠈⠛⠿⠋⠉ ',
-				' ⠄⠄⠄⢠⣯⣾⣿⡿⣳⡟⣰⣿⣠⣂⡀⢀⠄⢸⡄⠄⢀⣈⢆⣱⣤⡀⢄⠄⠄⠄ ',
-				' ⠄⠄⠄⣼⣿⣿⡟⣹⡿⣸⣿⢳⣿⣿⣿⣿⣴⣾⢻⣆⣿⣿⣯⢿⣿⣿⣷⣧⣀⣤ ',
-				' ⠄⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏⠋ ',
-				' ⡆⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿⠄ ',
-				' ⡇⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏⠄ ',
-				' ⣧⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄⠄ ',
-				' ⡏⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂⠄ ',
-				' ⡇⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄⠄ ',
-				' ⠄⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄⠄ ',
-				' ⢀⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄⠄ ',
-				' ⣿⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁⣸ ',
-				' ⣿⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄⣿ ',
-				' ⡟⠄⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣟⣻⣩⣾⣃⣴⣿⣿⡇⠸⢾ ',
-				'',
-			}
-
-			local db = require('dashboard')
-			db.setup {
-				theme = 'hyper',
-				config = {
-					header = dashboard_custom_header13,
-					shortcut = {
-						{
-							desc = ' Projects',
-							group = 'GruvboxBlueBold',
-							action = 'Telescope project',
-							key = 'p'
-						},
-						{
-							icon = ' ',
-							desc = 'RecentFiles',
-							group = 'GruvboxBlueBold',
-							action = 'Telescope recent_files pick',
-							key = 'f',
-						},
-						{
-							desc = ' FileBrowser',
-							group = 'GruvboxBlueBold',
-							action = 'Telescope file_browser',
-							key = 'b',
-						},
-					},
-					project = {
-						enable = true,
-						limit = 8,
-						icon = '  ',
-						label = 'Projects',
-						action = 'Telescope project',
-					},
-					footer = { "", "👁 私の想像力はどこにあるのか 👁" }
-				}
-			}
-			vim.cmd [[hi DashboardHeader ctermfg=13]]
-			vim.cmd [[hi DashboardFooter ctermfg=13]]
-		end,
-		requires = { 'nvim-tree/nvim-web-devicons' }
-	}
-
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		-- or                            , branch = '0.1.x',
-		requires = { { 'nvim-lua/plenary.nvim' } },
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
 	use {
@@ -141,13 +62,7 @@ return packer.startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
 	}
 
-
-	vim.keymap.set('n', '<leader><leader>', function()
-		local text = content or vim.api.nvim_get_current_line()
-		local scol = --[[ require("dashboard.utils").is_win and text:find('%w') or ]] text:find('%p')
-		print(scol)
-		text = text:sub(scol)
-	end, {})
+	require('telescope').setup()
 
 	local builtin = require('telescope.builtin')
 	vim.keymap.set('n', '<leader>ff', ":Telescope file_browser<cr>", {})
@@ -159,10 +74,37 @@ return packer.startup(function(use)
 	use { 'xiyaowong/telescope-emoji.nvim' }
 	use { "smartpde/telescope-recent-files" }
 	use { "nvim-telescope/telescope-project.nvim" }
+	use { "HUAHUAI23/telescope-session.nvim" }
 	require('telescope').load_extension('glyph')
+	require('telescope').load_extension('file_browser')
 	require("telescope").load_extension("emoji")
 	require("telescope").load_extension("recent_files")
-	require 'telescope'.load_extension('project')
+	require('telescope').load_extension('project')
+	require('telescope').load_extension('xray23')
+
+	use {
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup {
+			}
+		end
+	}
+
+	use {
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+			local db = require('dashboard')
+			db.setup(require"dashdoard_setup")
+			vim.cmd [[hi DashboardHeader ctermfg=13]]
+			vim.cmd [[hi DashboardFooter ctermfg=13]]
+			vim.cmd [[hi DashboardIcon ctermfg=8]]
+			vim.cmd [[hi DashboardDesc ctermfg=8]]
+			vim.cmd [[hi DashboardKey cterm=bold ctermfg=lightcyan]]
+		end,
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
+
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

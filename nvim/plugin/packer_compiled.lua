@@ -81,7 +81,7 @@ _G.packer_plugins = {
     url = "https://github.com/numToStr/Comment.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\16\0\0\b\0\20\0\0315\0\0\0006\1\1\0'\3\2\0B\1\2\0029\2\3\0015\4\4\0005\5\5\0=\0\6\0054\6\4\0005\a\a\0>\a\1\0065\a\b\0>\a\2\0065\a\t\0>\a\3\6=\6\n\0055\6\v\0=\6\f\0055\6\r\0=\6\14\5=\5\15\4B\2\2\0016\2\16\0009\2\17\2'\4\18\0B\2\2\0016\2\16\0009\2\17\2'\4\19\0B\2\2\1K\0\1\0\"hi DashboardFooter ctermfg=13\"hi DashboardHeader ctermfg=13\bcmd\bvim\vconfig\vfooter\1\3\0\0\0056👁 私の想像力はどこにあるのか 👁\fproject\1\0\5\ticon\n  \vaction\22Telescope project\nlabel\rProjects\nlimit\3\b\venable\2\rshortcut\1\0\4\ngroup\20GruvboxBlueBold\tdesc\20 FileBrowser\bkey\6b\vaction\27Telescope file_browser\1\0\5\tdesc\16RecentFiles\bkey\6f\vaction Telescope recent_files pick\ngroup\20GruvboxBlueBold\ticon\t \1\0\4\ngroup\20GruvboxBlueBold\tdesc\17 Projects\bkey\6p\vaction\22Telescope project\vheader\1\0\0\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\1\18\0\0\5a ⡿⠉⠄⠄⠄⠄⠈⠙⠿⠟⠛⠉⠉⠉⠄⠄⠄⠈⠉⠉⠉⠛⠛⠻⢿⣿⣿⣿⣿⣿ a ⠁⠄⠄⠄⢀⡴⣋⣵⣮⠇⡀⠄⠄⠄⠄⠄⠄⢀⠄⠄⠄⡀⠄⠄⠄⠈⠛⠿⠋⠉ a ⠄⠄⠄⢠⣯⣾⣿⡿⣳⡟⣰⣿⣠⣂⡀⢀⠄⢸⡄⠄⢀⣈⢆⣱⣤⡀⢄⠄⠄⠄ a ⠄⠄⠄⣼⣿⣿⡟⣹⡿⣸⣿⢳⣿⣿⣿⣿⣴⣾⢻⣆⣿⣿⣯⢿⣿⣿⣷⣧⣀⣤ a ⠄⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏⠋ a ⡆⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿⠄ a ⡇⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏⠄ a ⣧⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄⠄ a ⡏⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂⠄ a ⡇⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄⠄ a ⠄⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄⠄ a ⢀⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄⠄ a ⣿⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁⣸ a ⣿⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄⣿ a ⡟⠄⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣟⣻⣩⣾⣃⣴⣿⣿⡇⠸⢾ \5\0" },
+    config = { "\27LJ\2\n�\2\0\0\6\0\v\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0006\3\0\0'\5\3\0B\3\2\0A\1\0\0016\1\4\0009\1\5\1'\3\6\0B\1\2\0016\1\4\0009\1\5\1'\3\a\0B\1\2\0016\1\4\0009\1\5\1'\3\b\0B\1\2\0016\1\4\0009\1\5\1'\3\t\0B\1\2\0016\1\4\0009\1\5\1'\3\n\0B\1\2\1K\0\1\0001hi DashboardKey cterm=bold ctermfg=lightcyan\31hi DashboardDesc ctermfg=8\31hi DashboardIcon ctermfg=8\"hi DashboardFooter ctermfg=13\"hi DashboardHeader ctermfg=13\bcmd\bvim\20dashdoard_setup\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -142,6 +142,11 @@ _G.packer_plugins = {
     path = "/home/niten/.local/share/nvim/site/pack/packer/start/telescope-recent-files",
     url = "https://github.com/smartpde/telescope-recent-files"
   },
+  ["telescope-session.nvim"] = {
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/telescope-session.nvim",
+    url = "https://github.com/HUAHUAI23/telescope-session.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/niten/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -150,19 +155,19 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: project.nvim
-time([[Config for project.nvim]], true)
-try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
-time([[Config for project.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim', 'drop.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'drop.nvim', 'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
