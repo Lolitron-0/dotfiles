@@ -81,7 +81,7 @@ _G.packer_plugins = {
     url = "https://github.com/numToStr/Comment.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\nË\2\0\0\6\0\v\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0006\3\0\0'\5\3\0B\3\2\0A\1\0\0016\1\4\0009\1\5\1'\3\6\0B\1\2\0016\1\4\0009\1\5\1'\3\a\0B\1\2\0016\1\4\0009\1\5\1'\3\b\0B\1\2\0016\1\4\0009\1\5\1'\3\t\0B\1\2\0016\1\4\0009\1\5\1'\3\n\0B\1\2\1K\0\1\0001hi DashboardKey cterm=bold ctermfg=lightcyan\31hi DashboardDesc ctermfg=8\31hi DashboardIcon ctermfg=8\"hi DashboardFooter ctermfg=13\"hi DashboardHeader ctermfg=13\bcmd\bvim\21dashdoard_config\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n„\3\0\0\6\0\v\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0006\3\0\0'\5\3\0B\3\2\0A\1\0\0016\1\4\0009\1\5\1'\3\6\0B\1\2\0016\1\4\0009\1\5\1'\3\a\0B\1\2\0016\1\4\0009\1\5\1'\3\b\0B\1\2\0016\1\4\0009\1\5\1'\3\t\0B\1\2\0016\1\4\0009\1\5\1'\3\n\0B\1\2\1K\0\1\0Jhi DashboardKey cterm=bold ctermfg=lightcyan gui=bold guifg=lightcyan.hi DashboardDesc ctermfg=8 guifg=darkgrey.hi DashboardIcon ctermfg=8 guifg=darkgrey#hi link DashboardFooter string#hi link DashboardHeader String\bcmd\bvim\21dashdoard_config\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -95,6 +95,23 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/niten/.local/share/nvim/site/pack/packer/opt/drop.nvim",
     url = "https://github.com/folke/drop.nvim"
+  },
+  gruvbox = {
+    config = { "\27LJ\2\n–\1\0\0\3\0\t\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0'\1\6\0=\1\5\0006\0\0\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0&hi Normal guibg=NONE ctermbg=NONE\bcmd\tdark\15background\6o\vmedium\26gruvbox_contrast_dark\6g\bvim\0" },
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n]\0\1\4\1\4\0\b5\1\1\0'\2\0\0\18\3\0\0&\2\3\2=\2\2\1-\2\0\0=\2\3\1L\1\2\0\0À\vbuffer\tdesc\1\0\3\fnoremap\2\vnowait\2\vsilent\2\16nvim-tree: ¤\3\1\1\v\0\26\0:6\1\0\0'\3\1\0B\1\2\0023\2\2\0009\3\3\0019\3\4\0039\3\5\3\18\5\0\0B\3\2\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\n\0009\a\v\0019\a\f\a\18\b\2\0'\n\r\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\14\0009\a\15\0019\a\16\a9\a\17\a\18\b\2\0'\n\18\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\19\0009\a\15\0019\a\20\a9\a\21\a\18\b\2\0'\n\22\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\23\0009\a\15\0019\a\20\a9\a\24\a\18\b\2\0'\n\25\0B\b\2\0A\3\3\0012\0\0€K\0\1\0\21Open: horizontal\15horizontal\6i\19Open: vertical\rvertical\topen\6s\bRun\vsystem\brun\tnode\6S\tHelp\16toggle_help\ttree\6?\6n\bset\vkeymap\bvim\22default_on_attach\rmappings\vconfig\0\18nvim-tree.api\frequire¹\1\1\0\4\0\f\0\0216\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\4\0+\1\2\0=\1\5\0003\0\6\0006\1\a\0'\3\b\0B\1\2\0029\1\t\0015\3\n\0=\0\v\3B\1\2\1K\0\1\0\14on_attach\1\0\0\nsetup\14nvim-tree\frequire\0\18termguicolors\bopt\23loaded_netrwPlugin\17loaded_netrw\6g\bvim\0" },
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -151,18 +168,36 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niten/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-sublime-monokai"] = {
+    loaded = true,
+    path = "/home/niten/.local/share/nvim/site/pack/packer/start/vim-sublime-monokai",
+    url = "https://github.com/ErichDonGubler/vim-sublime-monokai"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
+-- Config for: gruvbox
+time([[Config for gruvbox]], true)
+try_loadstring("\27LJ\2\n–\1\0\0\3\0\t\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0'\1\6\0=\1\5\0006\0\0\0009\0\a\0'\2\b\0B\0\2\1K\0\1\0&hi Normal guibg=NONE ctermbg=NONE\bcmd\tdark\15background\6o\vmedium\26gruvbox_contrast_dark\6g\bvim\0", "config", "gruvbox")
+time([[Config for gruvbox]], false)
 -- Config for: project.nvim
 time([[Config for project.nvim]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
 time([[Config for project.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n]\0\1\4\1\4\0\b5\1\1\0'\2\0\0\18\3\0\0&\2\3\2=\2\2\1-\2\0\0=\2\3\1L\1\2\0\0À\vbuffer\tdesc\1\0\3\fnoremap\2\vnowait\2\vsilent\2\16nvim-tree: ¤\3\1\1\v\0\26\0:6\1\0\0'\3\1\0B\1\2\0023\2\2\0009\3\3\0019\3\4\0039\3\5\3\18\5\0\0B\3\2\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\n\0009\a\v\0019\a\f\a\18\b\2\0'\n\r\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\14\0009\a\15\0019\a\16\a9\a\17\a\18\b\2\0'\n\18\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\19\0009\a\15\0019\a\20\a9\a\21\a\18\b\2\0'\n\22\0B\b\2\0A\3\3\0016\3\6\0009\3\a\0039\3\b\3'\5\t\0'\6\23\0009\a\15\0019\a\20\a9\a\24\a\18\b\2\0'\n\25\0B\b\2\0A\3\3\0012\0\0€K\0\1\0\21Open: horizontal\15horizontal\6i\19Open: vertical\rvertical\topen\6s\bRun\vsystem\brun\tnode\6S\tHelp\16toggle_help\ttree\6?\6n\bset\vkeymap\bvim\22default_on_attach\rmappings\vconfig\0\18nvim-tree.api\frequire¹\1\1\0\4\0\f\0\0216\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\4\0+\1\2\0=\1\5\0003\0\6\0006\1\a\0'\3\b\0B\1\2\0029\1\t\0015\3\n\0=\0\v\3B\1\2\1K\0\1\0\14on_attach\1\0\0\nsetup\14nvim-tree\frequire\0\18termguicolors\bopt\23loaded_netrwPlugin\17loaded_netrw\6g\bvim\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

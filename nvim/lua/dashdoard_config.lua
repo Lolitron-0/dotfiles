@@ -19,9 +19,9 @@ local dashboard_custom_header13 = {
 	'',
 }
 
-local iconGroup = "Comment"
+local iconGroup = "Constant"
 local descGroup = "Comment"
-local keyGroup = "Title"
+local keyGroup = "ModeMsg"
 
 local res = {
 

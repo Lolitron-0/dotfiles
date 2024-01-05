@@ -3,7 +3,7 @@
 " Node: https://github.com/nodesource/distributions
 " Powerline: sudo apt install python3-powerline fonts-powerline
 " Coc: coc-clangd coc-lua
-" Nerd: https://www.nerdfonts.com/font-downloads
+" Nerd: Droid Sans --- https://www.nerdfonts.com/font-downloads
 
 if v:progname =~? "evim"
   finish
@@ -82,11 +82,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
-
-  	Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'	
 	Plug 'tpope/vim-fugitive'
-	Plug 'morhetz/gruvbox'
 	Plug 'tpope/vim-surround'
 	Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 	Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -97,13 +94,6 @@ call plug#begin()
 	Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 
 call plug#end()
-
-let g:gruvbox_contrast_dark='hard'
-set background=dark
-colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
-
-hi DashboardHeader ctermfg=13
 
 let g:cpp_function_highlight = 1
 let g:cpp_member_highlight = 1

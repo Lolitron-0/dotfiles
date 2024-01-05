@@ -95,16 +95,61 @@ return packer.startup(function(use)
 		event = 'VimEnter',
 		config = function()
 			local db = require('dashboard')
-			db.setup(require"dashdoard_config")
-			vim.cmd [[hi DashboardHeader ctermfg=13]]
-			vim.cmd [[hi DashboardFooter ctermfg=13]]
-			vim.cmd [[hi DashboardIcon ctermfg=8]]
-			vim.cmd [[hi DashboardDesc ctermfg=8]]
-			vim.cmd [[hi DashboardKey cterm=bold ctermfg=lightcyan]]
+			db.setup(require "dashdoard_config")
+			vim.cmd [[hi link DashboardHeader String]]
+			-- vim.cmd [[hi DashboardHeader ctermfg=13 guifg=magenta]]
+			vim.cmd [[hi link DashboardFooter string]]
+			--vim.cmd [[hi DashboardFooter ctermfg=13 guifg=magenta]]
+			vim.cmd [[hi DashboardIcon ctermfg=8 guifg=darkgrey]]
+			vim.cmd [[hi DashboardDesc ctermfg=8 guifg=darkgrey]]
+			vim.cmd [[hi DashboardKey cterm=bold ctermfg=lightcyan gui=bold guifg=lightcyan]]
 		end,
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
 
+
+	use { "nvim-tree/nvim-tree.lua",
+		config = function()
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
+			vim.opt.termguicolors = true
+
+
+			local function my_on_attach(bufnr)
+				local api = require "nvim-tree.api"
+
+				local function opts(desc)
+					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+				end
+
+				
+				-- default mappings
+				api.config.mappings.default_on_attach(bufnr)
+
+				-- custom mappings
+				vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+				vim.keymap.set('n', 'S', api.node.run.system, opts('Run'))
+				vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: vertical'))
+				vim.keymap.set('n', 'i', api.node.open.horizontal, opts('Open: horizontal'))
+			end
+
+			require("nvim-tree").setup {
+				on_attach = my_on_attach,
+			}
+		end
+	}
+
+	use { 'rebelot/kanagawa.nvim' }
+	use { 'morhetz/gruvbox',
+		config = function()
+			vim.g.gruvbox_contrast_dark = 'medium'
+			vim.o.background = 'dark'
+			vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+		end
+	}
+	use { 'ErichDonGubler/vim-sublime-monokai' }
+	use { "folke/tokyonight.nvim" }
+	vim.cmd("colorscheme gruvbox")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
