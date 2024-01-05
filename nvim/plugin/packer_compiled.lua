@@ -81,7 +81,7 @@ _G.packer_plugins = {
     url = "https://github.com/numToStr/Comment.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n \2\0\0\6\0\v\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0006\3\0\0'\5\3\0B\3\2\0A\1\0\0016\1\4\0009\1\5\1'\3\6\0B\1\2\0016\1\4\0009\1\5\1'\3\a\0B\1\2\0016\1\4\0009\1\5\1'\3\b\0B\1\2\0016\1\4\0009\1\5\1'\3\t\0B\1\2\0016\1\4\0009\1\5\1'\3\n\0B\1\2\1K\0\1\0001hi DashboardKey cterm=bold ctermfg=lightcyan\31hi DashboardDesc ctermfg=8\31hi DashboardIcon ctermfg=8\"hi DashboardFooter ctermfg=13\"hi DashboardHeader ctermfg=13\bcmd\bvim\20dashdoard_setup\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\nÀ\2\0\0\6\0\v\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0006\3\0\0'\5\3\0B\3\2\0A\1\0\0016\1\4\0009\1\5\1'\3\6\0B\1\2\0016\1\4\0009\1\5\1'\3\a\0B\1\2\0016\1\4\0009\1\5\1'\3\b\0B\1\2\0016\1\4\0009\1\5\1'\3\t\0B\1\2\0016\1\4\0009\1\5\1'\3\n\0B\1\2\1K\0\1\0001hi DashboardKey cterm=bold ctermfg=lightcyan\31hi DashboardDesc ctermfg=8\31hi DashboardIcon ctermfg=8\"hi DashboardFooter ctermfg=13\"hi DashboardHeader ctermfg=13\bcmd\bvim\21dashdoard_config\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,

@@ -95,7 +95,7 @@ return packer.startup(function(use)
 		event = 'VimEnter',
 		config = function()
 			local db = require('dashboard')
-			db.setup(require"dashdoard_setup")
+			db.setup(require"dashdoard_config")
 			vim.cmd [[hi DashboardHeader ctermfg=13]]
 			vim.cmd [[hi DashboardFooter ctermfg=13]]
 			vim.cmd [[hi DashboardIcon ctermfg=8]]
