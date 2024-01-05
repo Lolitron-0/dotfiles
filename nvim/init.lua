@@ -4,3 +4,4 @@ vim.cmd.source(vimrc)
 
 
 require("plugins")
+require("autocmds")
