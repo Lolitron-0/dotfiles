@@ -37,6 +37,33 @@ packer.init({
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		config = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+			require 'nvim-treesitter.configs'.setup {
+				ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query" },
+				highlight = {
+					enable = true,
+					additional_vim_regex_highlighting = false,
+				}
+			}
+		end,
+	}
+
+	use { 'neovim/nvim-lspconfig' }
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+		config = function()
+			require('lualine').setup {
+				options = { theme = "auto" }
+			}
+		end
+	}
+
 	use({
 		"folke/drop.nvim",
 		event = "VimEnter",
@@ -50,6 +77,8 @@ return packer.startup(function(use)
 
 	use { 'numToStr/Comment.nvim',
 		config = function() require('Comment').setup() end }
+
+	use { 'kyazdani42/nvim-web-devicons' }
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -70,17 +99,28 @@ return packer.startup(function(use)
 	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+
+	use {
+		'rmagatti/auto-session',
+		config = function()
+			require("auto-session").setup {
+				log_level = "error",
+			}
+		end
+	}
+
+
 	use { 'ghassan0/telescope-glyph.nvim' }
 	use { 'xiyaowong/telescope-emoji.nvim' }
 	use { "smartpde/telescope-recent-files" }
-	use { "nvim-telescope/telescope-project.nvim" }
-	use { "HUAHUAI23/telescope-session.nvim" }
+	use { 'nvim-telescope/telescope-project.nvim' }
 	require('telescope').load_extension('glyph')
 	require('telescope').load_extension('file_browser')
 	require("telescope").load_extension("emoji")
 	require("telescope").load_extension("recent_files")
 	require('telescope').load_extension('project')
-	require('telescope').load_extension('xray23')
+	require('telescope').load_extension('session-lens')
+
 
 	use {
 		"ahmedkhalf/project.nvim",
@@ -98,7 +138,7 @@ return packer.startup(function(use)
 			db.setup(require "dashdoard_config")
 			vim.cmd [[hi link DashboardHeader String]]
 			-- vim.cmd [[hi DashboardHeader ctermfg=13 guifg=magenta]]
-			vim.cmd [[hi link DashboardFooter string]]
+			--vim.cmd [[hi link DashboardFooter String]]
 			--vim.cmd [[hi DashboardFooter ctermfg=13 guifg=magenta]]
 			vim.cmd [[hi DashboardIcon ctermfg=8 guifg=darkgrey]]
 			vim.cmd [[hi DashboardDesc ctermfg=8 guifg=darkgrey]]
@@ -114,7 +154,6 @@ return packer.startup(function(use)
 			vim.g.loaded_netrwPlugin = 1
 			vim.opt.termguicolors = true
 
-
 			local function my_on_attach(bufnr)
 				local api = require "nvim-tree.api"
 
@@ -122,7 +161,7 @@ return packer.startup(function(use)
 					return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 				end
 
-				
+
 				-- default mappings
 				api.config.mappings.default_on_attach(bufnr)
 
@@ -136,6 +175,15 @@ return packer.startup(function(use)
 			require("nvim-tree").setup {
 				on_attach = my_on_attach,
 			}
+
+			vim.g.nvim_tree_follow = 1
+			vim.g.nvim_tree_hide_dotfiles = 0
+			vim.g.nvim_tree_indent_markers = 1
+			vim.g.nvim_tree_auto_open = 1
+			vim.g.nvim_tree_auto_close = 0
+			vim.g.nvim_tree_disable_netrw = 0
+			vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }
+			vim.g.nvim_tree_lsp_diagnostics = 1
 		end
 	}
 
@@ -149,7 +197,7 @@ return packer.startup(function(use)
 	}
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
-	vim.cmd("colorscheme gruvbox")
+
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

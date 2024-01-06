@@ -85,11 +85,10 @@ call plug#begin()
 	Plug 'ryanoasis/vim-devicons'	
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-	Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+	"Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 	Plug 'ErichDonGubler/vim-sublime-monokai'
-	Plug 'vim-airline/vim-airline'
+	""Plug 'vim-airline/vim-airline'
 	Plug 'tikhomirov/vim-glsl'
-	Plug 'neovim/nvim-lspconfig'
 	Plug 'powerline/powerline-fonts'
 	Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 
@@ -222,6 +221,9 @@ command! -nargs=0 Format :call CocActionAsync('format')
 
 nmap <S-M-f> :Format<cr>
 
+
+set foldmethod=indent	
+set foldlevelstart=99
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 

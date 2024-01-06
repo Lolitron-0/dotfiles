@@ -47,7 +47,7 @@ local res = {
 				key = 's',
 				key_hl = keyGroup,
 				key_format = ' %s',
-				action = "Telescope xray23 list"
+				action = "Telescope session-lens search_session"
 			},
 			{
 				icon = ' ',
