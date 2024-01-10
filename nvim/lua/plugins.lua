@@ -105,6 +105,7 @@ return packer.startup(function(use)
 		config = function()
 			require("auto-session").setup {
 				log_level = "error",
+				auto_session_suppress_dirs = {"~/"}
 			}
 		end
 	}
@@ -198,6 +199,7 @@ return packer.startup(function(use)
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
 
+	use "sindrets/diffview.nvim"
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
