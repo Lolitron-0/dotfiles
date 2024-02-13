@@ -2,7 +2,7 @@
 "
 " Node: https://github.com/nodesource/distributions
 " Powerline: sudo apt install python3-powerline fonts-powerline
-" Coc: coc-clangd coc-lua
+" Coc: coc-clangd coc-lua coc-cmake
 " Nerd: Droid Sans --- https://www.nerdfonts.com/font-downloads
 
 if v:progname =~? "evim"
