@@ -11,6 +11,16 @@
 	defaultEditor = true;
   };
  
+  programs.git = {
+    enable = true;
+    userName = "Lolitron-0";
+    userEmail = "ovcharov_05@mail.ru";
+  };
+
+  xdg.configFile."nvim" = {
+    source = ../../../configs;
+    recursive = true;
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
