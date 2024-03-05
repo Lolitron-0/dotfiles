@@ -7,19 +7,67 @@
   home.homeDirectory = "/home/niten";
 
   programs.neovim = {
-  	enable = true;
-	defaultEditor = true;
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    withNodeJs = true;
+    plugins = with pkgs.vimPlugins; [
+      coc-vimlsp
+      coc-json
+      coc-tsserver
+      coc-clangd
+      coc-lua
+      coc-cmake
+    ];
+    coc = {
+      enable = true;
+      settings = {
+        "clangd.arguments" = [ "--header-insertion=never" ];
+        "codelens.enable" = true;
+        "dialog.rounded" = true;
+        "languageserver" = {
+          "nix" = {
+            "command" = "nil";
+            "filetypes" = [ "nix" ];
+            "rootPatterns" = [ "flake.nix" ];
+            "settings" = {
+              "nil" = {
+                "formatting" = { "command" = [ "nixpkgs-fmt" ]; };
+              };
+            };
+          };
+        };
+      };
+    };
   };
- 
+
+  xdg.configFile."nvim" = {
+    source = ../../../configs/nvim;
+    recursive = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Lolitron-0";
     userEmail = "ovcharov_05@mail.ru";
   };
 
-  xdg.configFile."nvim" = {
-    source = ../../../configs/nvim;
-    recursive = true;
+  programs.kitty = {
+    enable = true;
+    theme = "Gruvbox Dark";
+    settings = {
+      enable_audio_bell = false;
+    };
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ls = "lsd";
+      nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
+      ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
+    };
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -33,7 +81,13 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    kitty-themes
+
+    libnotify
+    lsd
+    nil
+    nixpkgs-fmt
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -83,7 +137,7 @@
   #  /etc/profiles/per-user/niten/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

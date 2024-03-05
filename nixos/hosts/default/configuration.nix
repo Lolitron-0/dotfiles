@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -18,7 +19,7 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -91,14 +92,14 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users = {
-	"niten" = import ./home.nix;
+      "niten" = import ./home.nix;
     };
   };
 
@@ -107,12 +108,27 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-	neovim
-	git
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
+  environment.systemPackages =
+    let
+      llvm = pkgs.llvmPackages_latest;
+    in
+    with pkgs; [
+      git
+      kitty
+      telegram-desktop
+      wget
+
+      cmake
+      llvm.lldb
+      gdb
+      clang-tools
+      llvm.libstdcxxClang
+      cppcheck
+      llvm.libllvm
+      llvm.libcxx
+    ];
+
+  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "DroidSansMono" ]; }) ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

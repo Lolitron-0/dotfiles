@@ -43,7 +43,7 @@ return packer.startup(function(use)
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
 			require 'nvim-treesitter.configs'.setup {
-				ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query" },
+				ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query", "nix" },
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false,
