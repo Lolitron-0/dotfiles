@@ -61,14 +61,14 @@
     };
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ls = "lsd";
-      nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
-      ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
-    };
-  };
+  # programs.bash = {
+  #   enable = true;
+  #   shellAliases = {
+  #     ls = "lsd";
+  #     nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
+  #     ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
+  #   };
+  # };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

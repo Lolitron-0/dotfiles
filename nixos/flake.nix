@@ -14,16 +14,28 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      utils = import ./utils/default.nix { inherit inputs; };
+      myUtils = import ./myUtils/default.nix { inherit inputs; };
     in
-    with utils; {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/default/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
+    with myUtils; {
+      # nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      #   specialArgs = { inherit inputs; };
+      #   modules = [
+      #     ./hosts/default/configuration.nix
+      #     inputs.home-manager.nixosModules.default
+      #     ./modules/home-manager
+      #   ];
+      # };
+
+      nixosConfigurations = {
+        default = mkSystem ./hosts/default/configuration.nix;
       };
+
+      # homeConfigurations = {
+      #   "niten@default" = mkHome ./hosts/default/home.nix;
+      # };
+
+      nixosModules.default = ./modules/nixos;
+      homeManagerModules.default = ./modules/home-manager;
 
     };
 }
