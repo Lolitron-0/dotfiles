@@ -10,10 +10,9 @@
   };
 
   home.packages = with pkgs; [
-    xclip
 
     (writeShellScriptBin
-      "my-hello"
+      "gittok"
       ''
         	  	xclip < ~/git_token
       '')

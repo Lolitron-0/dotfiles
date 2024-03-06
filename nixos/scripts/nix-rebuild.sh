@@ -10,8 +10,11 @@ sudo nixos-rebuild switch --flake ~/dotfiles/nixos#default
 
 current=$(nixos-rebuild list-generations | grep current)
 
-git add .
-git commit -am "$current"
+if [[ $* == *-t* ]]
+then
+	git add .
+	git commit -am "$current"
+fi
 
 popd
 
