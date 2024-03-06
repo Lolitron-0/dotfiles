@@ -10,7 +10,7 @@ sudo nixos-rebuild switch --flake ~/dotfiles/nixos#default
 
 current=$(nixos-rebuild list-generations | grep current)
 
-if [[ $* == *-t* ]]
+if [[ $* != *-t* ]]
 then
 	git add .
 	git commit -am "$current"
