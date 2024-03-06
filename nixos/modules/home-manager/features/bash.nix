@@ -10,6 +10,7 @@
   };
 
   home.packages = with pkgs; [
+    xclip
 
     (writeShellScriptBin
       "gittok"
