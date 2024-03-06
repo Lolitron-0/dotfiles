@@ -3,7 +3,7 @@ let
   myUtils = (import ./default.nix) { inherit inputs; };
   outputs = inputs.self.outputs;
 in
-{
+rec {
   mkSystem = config:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs outputs myUtils; };
@@ -13,14 +13,14 @@ in
       ];
     };
 
-  # mkHome = config:
-  #   inputs.home-manager.lib.homeManagerConfiguration {
-  #     extraSpecialArgs = { inherit inputs myLib outputs; };
-  #     modules = [
-  #       config
-  #       outputs.homeManagerModules.default
-  #     ];
-  #   };
+  mkHome = config:
+    inputs.home-manager.lib.homeManagerConfiguration {
+      extraSpecialArgs = { inherit inputs myUtils outputs; };
+      modules = [
+        config
+        outputs.homeManagerModules.default
+      ];
+    };
 
   filesIn = dir: (map (fname: dir + "/${fname}"))
     (builtins.attrNames (builtins.readDir dir));
@@ -66,7 +66,7 @@ in
         let
           name = builtins.head (builtins.split "\\." (baseNameOf f));
         in
-        (myUtils.extendModule ((extension name) // { path = f; })))
+        (extendModule ((extension name) // { path = f; })))
       modules;
 
 }

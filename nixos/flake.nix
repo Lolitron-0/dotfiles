@@ -10,10 +10,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { ... }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       myUtils = import ./myUtils/default.nix { inherit inputs; };
     in
     with myUtils; {

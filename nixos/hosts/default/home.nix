@@ -1,10 +1,17 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, outputs, lib, ... }:
 
 {
+
+  imports = [ outputs.homeManagerModules.default ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "niten";
   home.homeDirectory = "/home/niten";
+
+  myHMModules = {
+    nvim.enable = true;
+    bash.enable = true;
+  };
 
   programs.git = {
     enable = true;

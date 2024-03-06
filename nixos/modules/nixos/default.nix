@@ -1,21 +1,22 @@
-{ pkgs, lib, config, utils, ... }:
+{ pkgs, lib, inputs, config, myUtils, ... }:
 let
   cfg = config.myNixOSModules;
 
-  # features =
-  #   utils.extendModules
-  #     (name: {
-  #       extraOptions = {
-  #         myNixOSModules.${name}.enable = lib.mkEnableOption "enable my ${name} config";
-  #       };
-  #
-  #       configExtension = config: (lib.mkIf cfg.${name}.enable config);
-  #     })
-  #     (utils.filesIn ./features);
-  features = [ ];
+  features =
+    myUtils.extendModules
+      (name: {
+        extraOptions = {
+          myNixOSModules.${name}.enable = lib.mkEnableOption "enable my ${name} config";
+        };
+
+        configExtension = config: (lib.mkIf cfg.${name}.enable config);
+      })
+      (myUtils.filesIn ./features);
 in
 {
   imports =
-    [ ]
+    [
+      inputs.home-manager.nixosModules.home-manager
+    ]
     ++ features;
 }

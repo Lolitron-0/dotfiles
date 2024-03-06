@@ -1,9 +1,9 @@
-{ pkgs, lib, config, utils, ... }:
+{ pkgs, lib, config, inputs, myUtils, ... }:
 let
   cfg = config.myHMModules;
 
   features =
-    utils.extendModules
+    myUtils.extendModules
       (name: {
         extraOptions = {
           myHMModules.${name}.enable = lib.mkEnableOption "enable my ${name} config";
@@ -11,7 +11,7 @@ let
 
         configExtension = config: (lib.mkIf cfg.${name}.enable config);
       })
-      (utils.filesIn ./features);
+      (myUtils.filesIn ./features);
 in
 {
   imports =

@@ -2,15 +2,38 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, outputs, ... }:
 
 {
   imports =
     [
+      outputs.nixosModules.default
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
     ];
+
+  myNixOSModules.home-manager.enable = true;
+  myNixOSModules.userName = "niten";
+  myNixOSModules.userConfig = ./home.nix;
+
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.niten = {
+    isNormalUser = true;
+    description = "niten";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      firefox
+      #  thunderbird
+    ];
+  };
+
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs; };
+  #   users = {
+  #     "niten" = import ./home.nix;
+  #   };
+  # };
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -89,23 +112,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.niten = {
-    isNormalUser = true;
-    description = "niten";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      #  thunderbird
-    ];
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "niten" = import ./home.nix;
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
