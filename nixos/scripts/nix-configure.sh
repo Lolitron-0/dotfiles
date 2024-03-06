@@ -2,6 +2,9 @@
 
 set -e
 
+# bruh
+sudo echo
+
 pushd ~/dotfiles
 
 $EDITOR
