@@ -23,7 +23,33 @@ in
         if (builtins.isString path) || (builtins.isPath path)
         then import path margs
         else path margs;
+      evalNoImports = builtins.removeAttrs eval [ "imports" "options" ];
+
+      extra =
+        if (builtins.hasAttr "extraOptions" args) || (builtins.hasAttr "extraConfig" args)
+        then [
+          ({ ... }: {
+            options = args.extraOptions or { };
+            config = args.extraConfig or { };
+          })
+        ]
+        else [ ];
+
     in
-    { };
+    {
+      imports =
+        (eval.imports or [ ])
+        ++ extra;
+
+      options =
+        if builtins.hasAttr "optionsExtension" args
+        then (args.optionsExtension (eval.options or { }))
+        else (eval.options or { });
+
+      config =
+        if builtins.hasAttr "configExtension" args
+        then (args.configExtension (eval.config or evalNoImports))
+        else (eval.config or evalNoImports);
+    };
 
 }
