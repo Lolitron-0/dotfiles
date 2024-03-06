@@ -30,9 +30,9 @@
         default = mkSystem ./hosts/default/configuration.nix;
       };
 
-      # homeConfigurations = {
-      #   "niten@default" = mkHome ./hosts/default/home.nix;
-      # };
+      homeConfigurations = {
+        "niten@default" = mkHome ./hosts/default/home.nix;
+      };
 
       nixosModules.default = ./modules/nixos;
       homeManagerModules.default = ./modules/home-manager;
