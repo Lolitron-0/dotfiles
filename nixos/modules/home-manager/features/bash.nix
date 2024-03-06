@@ -7,6 +7,8 @@
       nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
       ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
     };
+	bashrcExtra = ''unset SSH_ASKPASS'';
+	historyControl = ["ignoredups"];
   };
 
   home.packages = with pkgs; [
