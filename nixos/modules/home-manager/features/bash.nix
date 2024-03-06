@@ -8,4 +8,14 @@
       ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
     };
   };
+
+  home.packages = with pkgs; [
+    xclip
+
+    (writeShellScriptBin
+      "my-hello"
+      ''
+        xclip --version
+      '')
+  ];
 }
