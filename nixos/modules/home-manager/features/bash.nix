@@ -15,7 +15,7 @@
     (writeShellScriptBin
       "my-hello"
       ''
-        xclip --version
+        	  	xclip < ~/git_token
       '')
   ];
 }
