@@ -14,9 +14,9 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      utils = import ./utils/default.nix { inherit inputs; };
     in
-    {
-
+    with utils; {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

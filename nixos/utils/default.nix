@@ -3,7 +3,7 @@ let
   myLib = (import ./default.nix) { inherit inputs; };
   outputs = inputs.self.outputs;
 in
-{
+rec {
   mkSystem = config:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs outputs myLib; };
@@ -51,5 +51,14 @@ in
         then (args.configExtension (eval.config or evalNoImports))
         else (eval.config or evalNoImports);
     };
+
+  extendModules = extension: modules:
+    map
+      (f:
+        let
+          name = builtins.head (builtins.split "\\." (baseNameOf f));
+        in
+        (extendModule ((extension name) /* // { path = f; } */)))
+      modules;
 
 }
