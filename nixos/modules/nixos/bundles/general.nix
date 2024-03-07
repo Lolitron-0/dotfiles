@@ -15,12 +15,6 @@ in
     xwayland.enable = true;
   };
 
-  # services.xserver = lib.mkIf cfg.sharedSettings.hyprland.enable {
-  #      displayManager = {
-  #        defaultSession = "hyprland";
-  #      };
-  #    };
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -75,6 +69,9 @@ in
 
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.tapping = true;
+
+  # services.xserver.displayManager.defaultSession =
+  #   lib.mkIf cfg.sharedSettings.hyprland.enable "hyprland";
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
