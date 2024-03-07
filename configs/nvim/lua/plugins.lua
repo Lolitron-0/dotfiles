@@ -69,7 +69,7 @@ return packer.startup(function(use)
 		event = "VimEnter",
 		config = function()
 			require("drop").setup {
-				theme = "snow", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
+				theme = "spring", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
 				filetypes = { "dashboard", "alpha", "starter" },
 			}
 		end,
