@@ -26,6 +26,8 @@
     lsd
     nil
     nixpkgs-fmt
+    wl-clipboard
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
