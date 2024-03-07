@@ -17,7 +17,7 @@
     (writeShellScriptBin
       "gittok"
       ''
-        	  	xclip < ~/git_token
+        	  	wl-copy < ~/git_token
       '')
   ];
 }
