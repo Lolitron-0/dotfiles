@@ -1,5 +1,17 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
+let
+  cfg = config.myHMModules.nvim;
+in
 {
+  options.myHMModules.nvim = {
+    configPath = lib.mkOption {
+      #default = "~/dotfiles/configs/nvim";
+      description = ''
+        		path to config directory
+        	'';
+    };
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -37,7 +49,7 @@
   };
 
   xdg.configFile."nvim" = {
-    source = ./../../../../configs/nvim;
+    source = cfg.configPath;
     recursive = true;
   };
 }

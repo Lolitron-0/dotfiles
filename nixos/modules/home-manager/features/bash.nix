@@ -7,17 +7,17 @@
       nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
       ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
     };
-	bashrcExtra = ''unset SSH_ASKPASS'';
-	historyControl = ["ignoredups"];
+    bashrcExtra = ''unset SSH_ASKPASS'';
+    historyControl = [ "erasedups" ];
   };
 
-  # home.packages = with pkgs; [
-  #   xclip
-  #
-  #   (writeShellScriptBin
-  #     "gittok"
-  #     ''
-  #       	  	xclip < ~/git_token
-  #     '')
-  # ];
+  home.packages = with pkgs; [
+    xclip
+
+    (writeShellScriptBin
+      "gittok"
+      ''
+        	  	xclip < ~/git_token
+      '')
+  ];
 }

@@ -9,7 +9,10 @@
   home.homeDirectory = "/home/niten";
 
   myHMModules = {
-    nvim.enable = true;
+    nvim = {
+      enable = true;
+      configPath = ./../../../configs/nvim;
+    };
     bash.enable = true;
   };
 
