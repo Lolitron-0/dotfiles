@@ -21,7 +21,7 @@
     })
     )
 
-    # wl-clipboard
+    wl-clipboard
 
     mako
     libnotify
