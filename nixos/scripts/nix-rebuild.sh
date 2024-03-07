@@ -19,3 +19,4 @@ fi
 popd
 
 notify-send -e "NixOS rebuilt OK!" -t 600 --icon=software-update-available
+echo "Done!"
