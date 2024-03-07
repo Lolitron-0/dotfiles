@@ -128,7 +128,6 @@
       telegram-desktop
       wget
 
-      cmake
 	  ninja
       llvm.lldb
       gdb
