@@ -129,6 +129,7 @@
       wget
 
       cmake
+	  ninja
       llvm.lldb
       gdb
       clang-tools

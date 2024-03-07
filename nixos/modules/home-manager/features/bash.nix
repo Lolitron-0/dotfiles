@@ -11,13 +11,13 @@
 	historyControl = ["ignoredups"];
   };
 
-  home.packages = with pkgs; [
-    xclip
-
-    (writeShellScriptBin
-      "gittok"
-      ''
-        	  	xclip < ~/git_token
-      '')
-  ];
+  # home.packages = with pkgs; [
+  #   xclip
+  #
+  #   (writeShellScriptBin
+  #     "gittok"
+  #     ''
+  #       	  	xclip < ~/git_token
+  #     '')
+  # ];
 }
