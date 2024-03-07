@@ -5,7 +5,7 @@ in
 {
   options.myHMModules.nvim = {
     configPath = lib.mkOption {
-      #default = "~/dotfiles/configs/nvim";
+      default = "~/dotfiles/configs/nvim";
       description = ''
         		path to config directory
         	'';
