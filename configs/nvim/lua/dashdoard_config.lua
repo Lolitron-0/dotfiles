@@ -87,7 +87,7 @@ local res = {
 				key = 'c',
 				key_hl = keyGroup,
 				key_format = ' %s',
-				action = "e ~/.config/nvim"
+				action = "e ~/dotfiles/configs/nvim"
 			},
 		},
 		footer = { "", "👁 私の想像力はどこにあるのか 👁" }
