@@ -12,11 +12,13 @@
       ./hardware-configuration.nix
     ];
 
-  myNixOSModules.bundles.home-manager.enable = true;
-  myNixOSModules.bundles.general.enable = true;
-  myNixOSModules.sharedSettings.hyprland.enable = false;
-  myNixOSModules.userName = "niten";
-  myNixOSModules.userConfig = ./home.nix;
+  myNixOSModules =
+    {
+      bundles.general.enable = true;
+      sharedSettings.hyprland.enable = true;
+      userName = "niten";
+      userConfig = ./home.nix;
+    };
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

@@ -1,5 +1,4 @@
 { pkgs, inputs, outputs, lib, ... }:
-
 {
 
   imports = [ outputs.homeManagerModules.default ];
@@ -8,10 +7,23 @@
   home.username = "niten";
   home.homeDirectory = "/home/niten";
 
-  myHMModules.bundles.general.enable = true;
-  myHMModules.bundles.desktop.enable = true;
+  myHMModules = {
 
-  home.stateVersion = "23.11"; 
+    bundles.general.enable = true;
+    bundles.desktop.enable = true;
+
+    monitors = [
+      {
+        name = "eDP-1";
+        width = 1920;
+        height = 1080;
+        refreshRate = 144.00101;
+      }
+    ];
+
+  };
+
+  home.stateVersion = "23.11";
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

@@ -2,7 +2,24 @@
 {
   myHMModules = {
     kitty.enable = true;
+    hyprland.enable = true;
   };
+
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "nord";
+      theme_background = false;
+      vim_keys = true;
+      shown_boxes = "cpu mem proc";
+      update_ms = 500;
+    };
+  };
+
+  home.packages = with pkgs;[
+    pipes
+    s-tui # waiting to fix
+  ];
 
   services.mako = {
     enable = true;
@@ -15,19 +32,4 @@
     layer = "overlay";
   };
 
-  home.packages = with pkgs; [
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    })
-    )
-
-
-    mako
-    libnotify
-
-    swww
-    rofi-wayland
-    networkmanagerapplet
-
-  ];
 }

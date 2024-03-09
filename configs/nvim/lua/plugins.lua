@@ -189,15 +189,19 @@ return packer.startup(function(use)
 	}
 
 	use { 'rebelot/kanagawa.nvim' }
-	use { 'morhetz/gruvbox',
+	use { 'ellisonleao/gruvbox.nvim',
 		config = function()
-			vim.g.gruvbox_contrast_dark = 'medium'
+			require("gruvbox").setup{
+				contrast = "hard",
+				transparent_mode=true
+			}
 			vim.o.background = 'dark'
 			vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 		end
 	}
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
+	use { "xiyaowong/transparent.nvim" }
 
 	use "sindrets/diffview.nvim"
 

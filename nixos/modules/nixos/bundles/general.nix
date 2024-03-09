@@ -10,6 +10,10 @@ let
   cfg = config.myNixOSModules;
 in
 {
+  myNixOSModules = {
+    home-manager.enable = true;
+  };
+
   programs.hyprland = {
     enable = cfg.sharedSettings.hyprland.enable;
     xwayland.enable = true;
