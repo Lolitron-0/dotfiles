@@ -206,6 +206,7 @@ return packer.startup(function(use)
 			require("transparent").setup{
 				exclude_groups={"CursorLine"}
 			}
+			-- require('transparent').clear_prefix('lualine')
 			vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
 		end
 	}
