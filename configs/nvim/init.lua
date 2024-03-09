@@ -7,6 +7,6 @@ require("plugins")
 require("autocmds")
 
 
-vim.g.colors_name = "gruvbox"
+vim.g.colors_name = "kanagawa-dragon"
 
 vim.cmd"command! -nargs=0 NvimTree :NvimTreeOpen"

@@ -90,7 +90,7 @@ in
 
           blur = {
             enabled = true;
-            size = 3;
+            size = 5;
             passes = 1;
           };
 

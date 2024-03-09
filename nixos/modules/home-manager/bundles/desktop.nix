@@ -8,7 +8,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "nord";
+      color_theme = "oendark";
       theme_background = false;
       vim_keys = true;
       shown_boxes = "cpu mem proc";
@@ -17,6 +17,9 @@
   };
 
   home.packages = with pkgs;[
+    grim
+	slurp
+
     pipes
     s-tui # waiting to fix
   ];

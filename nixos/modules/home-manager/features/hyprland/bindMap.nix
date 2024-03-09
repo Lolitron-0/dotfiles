@@ -28,8 +28,9 @@
     "$mainMod SHIFT, k, movewindow, u"
     "$mainMod SHIFT, j, movewindow, d"
 
-    "bind = $mainMod, mouse_down, workspace, e+1"
-    "bind = $mainMod, mouse_up, workspace, e-1"
+    "$mainMod, mouse_down, workspace, e+1"
+    "$mainMod, mouse_up, workspace, e-1"
+	", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
   ]
   ++ map
     (n: "$mainMod SHIFT, ${toString n}, movetoworkspace, ${toString (

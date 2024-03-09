@@ -136,8 +136,7 @@ return packer.startup(function(use)
 		event = 'VimEnter',
 		config = function()
 			local db = require('dashboard')
-			db.setup(require "dashdoard_config")
-			vim.cmd [[hi link DashboardHeader String]]
+			db.setup(require "dashdoard_config") vim.cmd [[hi link DashboardHeader String]]
 			-- vim.cmd [[hi DashboardHeader ctermfg=13 guifg=magenta]]
 			--vim.cmd [[hi link DashboardFooter String]]
 			--vim.cmd [[hi DashboardFooter ctermfg=13 guifg=magenta]]
@@ -201,7 +200,15 @@ return packer.startup(function(use)
 	}
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
-	use { "xiyaowong/transparent.nvim" }
+	use { 'shaunsingh/nord.nvim' }
+	use { "xiyaowong/transparent.nvim",
+		config = function()
+			require("transparent").setup{
+				exclude_groups={"CursorLine"}
+			}
+			vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
+		end
+	}
 
 	use "sindrets/diffview.nvim"
 
