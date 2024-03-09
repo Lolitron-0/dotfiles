@@ -9,6 +9,7 @@
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, S, togglesplit," # dwindle
 
+    "$mainMod, T, exec, hyprctl --batch \"dispatch exec kitty --execute pipes.sh;dispatch exec kitty --execute btop -p 2;dispatch exec kitty;\""
     "ALT, Tab, workspace,e+1"
     "ALT, Tab, bringactivetotop,"
 

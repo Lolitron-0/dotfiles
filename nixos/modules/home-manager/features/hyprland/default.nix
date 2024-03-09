@@ -10,10 +10,12 @@ let
     	systemctl --user import-environment PATH &
     	systemctl --user restart xdg-desktop-portal.service &
 
-    	waybar &
-
-    	sleep 2
+    	sleep 1
     	${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
+
+    	waybar &
+		
+		
   '';
 
   bindMap = import ./bindMap.nix;
@@ -32,7 +34,7 @@ in
           border_size = 2;
           "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
           "col.inactive_border" = "rgba(595959aa)";
-          layout = "dwindle";
+          layout = "master";
 
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false;
@@ -58,25 +60,25 @@ in
         env = [
           "XCURSOR_SIZE,24"
         ];
-
+		
         input = {
           kb_layout = "us,ru";
           kb_variant = "";
           kb_model = "";
-          kb_options = "";
+          kb_options = "grp:win_space_toggle";
           kb_rules = "";
 
           follow_mouse = 1;
 
           touchpad = {
-            natural_scroll = false;
+            natural_scroll = true;
           };
 
           repeat_rate = 40;
           repeat_delay = 250;
           force_no_accel = true;
 
-          sensitivity = 0.2; # -1.0 to 1.0, 0 means no modification.
+          sensitivity = 0.5; # -1.0 to 1.0, 0 means no modification.
         };
 
         misc = {
@@ -127,8 +129,8 @@ in
         };
 
         device = {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
+          name = "ps/2-synaptics-touchpad";
+          sensitivity = 0.5;
         };
 
         windowrulev2 = [
