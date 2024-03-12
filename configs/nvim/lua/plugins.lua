@@ -53,6 +53,7 @@ return packer.startup(function(use)
 	}
 
 	use { 'neovim/nvim-lspconfig' }
+	use { 'elkowar/yuck.vim' }
 
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -70,7 +71,7 @@ return packer.startup(function(use)
 		config = function()
 			require("drop").setup {
 				theme = "spring", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
-				filetypes = { "dashboard", "alpha", "starter" },
+				filetypes = { --[[ "dashboard", ]] "alpha", "starter" },
 			}
 		end,
 	})
@@ -207,6 +208,7 @@ return packer.startup(function(use)
 				exclude_groups={"CursorLine"}
 			}
 			-- require('transparent').clear_prefix('lualine')
+			require('transparent').clear_prefix('Dashbard')
 			vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
 		end
 	}

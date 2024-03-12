@@ -1,21 +1,21 @@
 { pkgs, config, outputs, ... }:
 let
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
-    	${pkgs.swww}/bin/swww init &
+        	${pkgs.swww}/bin/swww init &
 
-    	${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
+        	${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
 
-    	hyprctl setcursor Bibata-Modern-Ice 16 &
+        	hyprctl setcursor Bibata-Modern-Ice 16 &
 
-    	systemctl --user import-environment PATH &
-    	systemctl --user restart xdg-desktop-portal.service &
+        	systemctl --user import-environment PATH &
+        	systemctl --user restart xdg-desktop-portal.service &
 
-    	sleep 1
-    	${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
 
-    	waybar &
-		
-		
+        	waybar &
+    		
+        	sleep 3
+        	${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
+    		
   '';
 
   bindMap = import ./bindMap.nix;
@@ -31,10 +31,10 @@ in
         general = {
           gaps_in = 5;
           gaps_out = 10;
-          border_size = 2;
+          border_size = 1;
           "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
           "col.inactive_border" = "rgba(595959aa)";
-          layout = "master";
+          layout = "dwindle";
 
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false;
@@ -60,7 +60,7 @@ in
         env = [
           "XCURSOR_SIZE,24"
         ];
-		
+
         input = {
           kb_layout = "us,ru";
           kb_variant = "";
@@ -76,13 +76,13 @@ in
 
           repeat_rate = 40;
           repeat_delay = 250;
-          force_no_accel = true;
+          force_no_accel = false;
 
-          sensitivity = 0.5; # -1.0 to 1.0, 0 means no modification.
+          sensitivity = 0.2; # -1.0 to 1.0, 0 means no modification.
         };
 
         misc = {
-          force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
+          force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers
         };
         decoration = {
 
@@ -90,7 +90,7 @@ in
 
           blur = {
             enabled = true;
-            size = 5;
+            size = 7;
             passes = 1;
           };
 
@@ -118,23 +118,29 @@ in
         dwindle = {
           pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
           preserve_split = true; # you probably want this
+          smart_resizing = true;
         };
 
         master = {
           new_is_master = true;
+          smart_resizing = true;
         };
 
         gestures = {
           workspace_swipe = true;
         };
 
-        device = {
-          name = "ps/2-synaptics-touchpad";
-          sensitivity = 0.5;
-        };
+        # device = {
+        #   name = "ps/2-synaptics-touchpad";
+        #   sensitivity = 0.5;
+        # };
 
         windowrulev2 = [
           "suppressevent maximize, class:.*"
+          "float, title:^(Media viewer)$"
+
+          "float, title:^(Picture-in-Picture)$"
+          "pin, title:^(Picture-in-Picture)$"
         ];
 
         windowrule = [
@@ -158,10 +164,10 @@ in
     };
 
     home.packages = with pkgs; [
-      (pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-      )
+      # (pkgs.waybar.overrideAttrs (oldAttrs: {
+      #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      # }))
+      eww
 
       mako
       libnotify

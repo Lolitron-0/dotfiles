@@ -9,9 +9,13 @@
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, S, togglesplit," # dwindle
 
-    "$mainMod, T, exec, hyprctl --batch \"dispatch exec kitty --execute pipes.sh;dispatch exec kitty --execute btop -p 2;dispatch exec kitty;\""
+    #"$mainMod, T, exec, hyprctl --batch \"dispatch exec kitty --execute pipes.sh;dispatch exec kitty --execute btop -p 2;dispatch exec kitty;\""
+    "$mainMod, T, exec, hyprctl --batch \"dispatch exec kitty --execute cava;dispatch exec kitty --execute btop -p 2;dispatch exec kitty;\""
+
     "ALT, Tab, workspace,e+1"
     "ALT, Tab, bringactivetotop,"
+
+    "ALT SHIFT, Tab, workspace, e-1"
 
     "$mainMod, left, movefocus, l"
     "$mainMod, right, movefocus, r"
@@ -30,7 +34,10 @@
 
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
-	", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
+    ", Print, exec, grim -g \"$(slurp -d)\" - | wl-copy"
+
+    ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
+    ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
   ]
   ++ map
     (n: "$mainMod SHIFT, ${toString n}, movetoworkspace, ${toString (
@@ -55,6 +62,10 @@
     "$mainMod CTRL, h, resizeactive, -30 0"
     "$mainMod CTRL, k, resizeactive, 0 -10"
     "$mainMod CTRL, j, resizeactive, 0 10"
+
+    ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+    ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
   ];
   bindm = [
     # Move/resize windows with mainMod + LMB/RMB and dragging

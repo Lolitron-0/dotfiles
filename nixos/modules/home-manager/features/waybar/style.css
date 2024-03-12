@@ -1,0 +1,193 @@
+* {
+	border: none;
+	border-radius: 5px;
+	font-family: "DroidSansM Nerd Font";
+	font-weight: bold;
+	font-size: 17px;
+	min-height: 0px;
+	text-shadow: alpha(@theme_text_color, 0.6) 0px 0px 5px;
+}
+
+
+window#waybar {
+	border-radius: 10px;
+}
+
+
+tooltip {
+	background: @theme_unfocused_base_color;
+	color: @theme_text_color;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: shade(alpha(@theme_text_colors, 0.9), 1.25);
+}
+
+
+#workspaces button {
+	box-shadow: none;
+	border-radius: 7px;
+	padding-right: 12px;
+	padding-left: 10px;
+	margin-right: 2px;
+	margin-left: 2px;
+	color: @theme_text_color;
+	animation: gradient_f 2s ease-in infinite;
+	transition: all 0.2s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#workspaces button.active {
+	color: @accent_color;
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#workspaces button:hover {
+	color: @accent_color;
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#cpu,
+#memory,
+#custom-power,
+#clock,
+#workspaces,
+#window,
+#custom-updates,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-wallchange,
+#custom-mode,
+#tray {
+	color: @theme_text_color;
+	background-color: shade(alpha(@theme_text_colors, 0.9), 1.25);
+	opacity: 1;
+	margin: 3px 3px 3px 3px;
+}
+
+#custom-battery {
+	color: @green_1
+}
+
+/* resource monitor block */
+
+#cpu {
+	border-radius: 10px 0px 0px 10px;
+	margin-left: 25px;
+	padding-left: 12px;
+	padding-right: 4px;
+}
+
+#memory {
+	border-radius: 0px 10px 10px 0px;
+	border-left-width: 0px;
+	padding-left: 4px;
+	padding-right: 12px;
+	margin-right: 6px;
+}
+
+
+/* date time block */
+#clock {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+/* workspace window block */
+#workspaces {
+	padding: 0;
+	border-radius: 9px 9px 9px 9px;
+	background: mix(@theme_unfocused_base_color, white, 0.1);
+}
+
+#window {
+	/* border-radius: 0px 10px 10px 0px; */
+	/* padding-right: 12px; */
+}
+
+
+/* control center block */
+#custom-updates {
+	border-radius: 10px 0px 0px 10px;
+	margin-left: 6px;
+	padding-left: 12px;
+	padding-right: 4px;
+}
+
+#network {
+	color: @purple_1;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#language {
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+#bluetooth {
+	padding-left: 4px;
+	padding-right: 0px;
+}
+
+#pulseaudio {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#pulseaudio.microphone {
+	color: @red_1;
+	padding-left: 0px;
+	padding-right: 4px;
+}
+
+#pulseaudio-slider slider {
+	min-height: 0px;
+	min-width: 0px;
+	opacity: 0;
+	background-color: transparent;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+	min-height: 10px;
+	min-width: 80px;
+	border-radius: 5px;
+	background-color: mix(@theme_unfocused_base_color, white, 0.1);
+}
+
+#pulseaudio-slider highlight {
+	min-width: 10px;
+	border-radius: 5px;
+	background-color: @theme_text_color;
+	box-shadow: 0px 0px 8px 1px alpha(@theme_text_color, 0.6);
+}
+
+#cava {
+	margin-left: 30px;
+}
+
+/* system tray block */
+#custom-mode {
+	border-radius: 10px 0px 0px 10px;
+	margin-left: 6px;
+	padding-left: 12px;
+	padding-right: 4px;
+}
+
+#custom-logo {
+	margin-left: 13px;
+	padding-right: 10px;
+	color: @blue_1;
+	font-size: 18px;
+
+}
+
+#tray {
+	padding-left: 4px;
+	padding-right: 4px;
+}

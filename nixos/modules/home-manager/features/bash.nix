@@ -6,6 +6,11 @@
       ls = "lsd";
       nrb = "bash ~/dotfiles/nixos/scripts/nix-rebuild.sh";
       ncf = "bash ~/dotfiles/nixos/scripts/nix-configure.sh";
+      wbre = ''
+        	  killall -r .*waybar.*
+        	  waybar &
+        	  exit
+        	  '';
     };
     bashrcExtra = ''unset SSH_ASKPASS'';
     historyControl = [ "erasedups" ];

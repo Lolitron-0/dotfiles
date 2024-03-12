@@ -3,6 +3,9 @@
   myHMModules = {
     kitty.enable = true;
     hyprland.enable = true;
+    eww.enable = true;
+    waybar.enable = true;
+    gtk.enable = true;
   };
 
   programs.btop = {
@@ -18,9 +21,14 @@
 
   home.packages = with pkgs;[
     grim
-	slurp
+    slurp
+    brightnessctl
+
+    pulsemixer
+    pavucontrol
 
     pipes
+    cava
     s-tui # waiting to fix
   ];
 

@@ -4,7 +4,7 @@
     inputs.nix-colors.homeManagerModules.default
   ];
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+  colorScheme = inputs.nix-colors.colorSchemes.ocean;
 
   myHMModules = {
     nvim = {
@@ -32,6 +32,7 @@
     nil
     nixpkgs-fmt
     wl-clipboard
+	killall
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

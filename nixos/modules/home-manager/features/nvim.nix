@@ -25,6 +25,7 @@ in
       coc-clangd
       coc-lua
       coc-cmake
+	  coc-css
     ];
     coc = {
       enable = true;
