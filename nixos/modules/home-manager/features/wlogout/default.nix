@@ -16,25 +16,25 @@ in
       {
         label = "lock";
         action = "loginctl lock-session";
-        #text = "Lock";
+        text = "Lock";
         keybind = "l";
       }
       {
         label = "logout";
         action = "loginctl terminate-user $USER";
-        #text = "Logout";
+        text = "Logout";
         keybind = "e";
       }
       {
         label = "shutdown";
         action = "systemctl poweroff";
-        #text = "Shutdown";
+        text = "Shutdown";
         keybind = "s";
       }
       {
         label = "reboot";
         action = "systemctl reboot";
-        #text = "Reboot";
+        text = "Reboot";
         keybind = "r";
       }
     ];

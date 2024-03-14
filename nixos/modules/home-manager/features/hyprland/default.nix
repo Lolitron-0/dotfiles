@@ -1,20 +1,15 @@
 { pkgs, config, outputs, ... }:
 let
-  # ${pkgs.swww}/bin/swww init &
-  # sleep 3
-  # #${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
   # systemctl --user import-environment PATH &
   # systemctl --user restart xdg-desktop-portal.service &
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
-      			hyprpaper &
-				sleep 1
-    			hyprctl hyprpaper preload ${./anime.jpg}
-    			hyprctl hyprpaper wallpaper ${./anime.jpg}
-    			
+          ${pkgs.swww}/bin/swww init &
 
-            	${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
+    	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
+    	  hyprctl setcursor Bibata-Modern-Ice 16 &
 
-            	hyprctl setcursor Bibata-Modern-Ice 16 &
+          sleep 3
+          #${pkgs.swww}/bin/swww img ${./anime.jpg} &
   '';
 
   bindMap = import ./bindMap.nix;
