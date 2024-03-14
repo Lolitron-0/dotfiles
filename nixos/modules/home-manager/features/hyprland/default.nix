@@ -3,13 +3,14 @@ let
   # systemctl --user import-environment PATH &
   # systemctl --user restart xdg-desktop-portal.service &
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
-          ${pkgs.swww}/bin/swww init &
+          swww init &
+          swww clear
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
     	  hyprctl setcursor Bibata-Modern-Ice 16 &
 
           sleep 3
-          #${pkgs.swww}/bin/swww img ${./anime.jpg} &
+          #${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
   '';
 
   bindMap = import ./bindMap.nix;
@@ -170,7 +171,7 @@ in
       mako
       libnotify
 
-      #swww
+      swww
       hyprpaper
       networkmanagerapplet
       hyprlock
