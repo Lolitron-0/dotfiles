@@ -101,7 +101,7 @@ let
       exec = "echo ' '";
 	  exec-on-event = false;
       format = "{}";
-      on-double-click = "wlogout";
+      on-double-click = "wlogout -b 2 -m 0";
 	  tooltip = false;
     };
 

@@ -5,7 +5,7 @@
 let
 in
 {
-  xdg.configFile."rofi/config.rasi".text = with config.colorScheme.colors; ''
+  xdg.configFile."rofi/config.rasi".text = with config.colorScheme.palette; ''
         		configuration {
         			show-icons:                 true;
         			display-drun:               " ";
@@ -257,7 +257,7 @@ in
         			scrollbar:                   false;
         			layout:                      vertical;
         			reverse:                     false;
-        			fixed-height:                false;
+        			fixed-height:                true;
         			fixed-columns:               false;
 
         			spacing:                     5px;

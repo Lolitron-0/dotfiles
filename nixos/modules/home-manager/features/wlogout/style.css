@@ -40,13 +40,13 @@
     	background-image: image(url("./icons/logout.png"), url("./icons/logout.png"));
     }
 
-    #suspend {
-    	background-image: image(url("./icons/suspend.png"), url("./icons/suspend.png"));
-    }
+    /* #suspend { */
+    /* 	background-image: image(url("./icons/suspend.png"), url("./icons/suspend.png")); */
+    /* } */
 
-    #hibernate {
-    	background-image: image(url("./icons/hibernate.png"), url("./icons/hibernate.png"));
-    }
+    /* #hibernate { */
+    /* 	background-image: image(url("./icons/hibernate.png"), url("./icons/hibernate.png")); */
+    /* } */
 
     #shutdown {
     	background-image: image(url("./icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
