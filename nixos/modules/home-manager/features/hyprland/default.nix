@@ -6,13 +6,12 @@ let
           swww init &
 		  sleep 1
           swww clear 
-          swww clear 
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
     	  hyprctl setcursor Bibata-Modern-Ice 16 &
 
           sleep 3
-          #${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
+          ${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
   '';
 
   bindMap = import ./bindMap.nix;
