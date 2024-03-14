@@ -4,7 +4,9 @@ let
   # systemctl --user restart xdg-desktop-portal.service &
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
           swww init &
-          swww clear
+		  sleep 1
+          swww clear 
+          swww clear 
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
     	  hyprctl setcursor Bibata-Modern-Ice 16 &
