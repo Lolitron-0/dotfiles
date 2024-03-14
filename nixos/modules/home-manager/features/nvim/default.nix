@@ -3,15 +3,6 @@ let
   cfg = config.myHMModules.nvim;
 in
 {
-  options.myHMModules.nvim = {
-    configPath = lib.mkOption {
-      default = "~/dotfiles/configs/nvim";
-      description = ''
-        		path to config directory
-        	'';
-    };
-  };
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -50,7 +41,7 @@ in
   };
 
   xdg.configFile."nvim" = {
-    source = cfg.configPath;
+    source = ./.;
     recursive = true;
   };
 }

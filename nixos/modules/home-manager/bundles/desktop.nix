@@ -6,6 +6,8 @@
     eww.enable = true;
     waybar.enable = true;
     gtk.enable = true;
+	wlogout.enable = true;
+	rofi.enable = true;
   };
 
   programs.btop = {

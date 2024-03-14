@@ -21,10 +21,10 @@ let
 
   mainConfig = {
     mode = "dock";
-    layer = "bottom";
+    layer = "top";
     position = "top";
-    #height = 20;
-    gtk-shell-layser = true;
+    gtk-layer-shell = true;
+    wlr-layer-shell = false;
     margin-top = 10;
     margin-left = 10;
     margin-right = 10;
@@ -86,8 +86,8 @@ let
       };
       format = "{:%H:%M}";
       format-alt = "󰥔 {:%A, %B %d, %Y (%R)} ";
-      tooltip-format = ''
-        <span size='9pt' font='Droid Sans Mono'>{calendar}</span>'';
+      # tooltip-format = ''
+      #   <span size='9pt' font='Droid Sans Mono'>{calendar}</span>'';
     };
 
     cpu = {
@@ -99,17 +99,22 @@ let
 
     "custom/logo" = {
       exec = "echo ' '";
+	  exec-on-event = false;
       format = "{}";
+      on-double-click = "wlogout";
+	  tooltip = false;
     };
 
     "hyprland/window" = {
       format = "{}";
       rewrite = {
         "(.*) — Mozilla Firefox" = "󰈹 $1";
+        "(.*)[Tt]elegram(.*)" = " Telegram";
         "(.*)nvim" = " nvim";
         "(.*)Steam" = "󰓓 Steam";
       };
       separate-outputs = true;
+      max-length = 60;
     };
 
     "hyprland/language" = {
@@ -166,9 +171,11 @@ let
     cava = {
       framerate = 30;
       autosens = 1;
-      bars = 14;
+      bars = 20;
       method = "pulse";
       source = "auto";
+      sleep_timer = 5;
+      hide_on_silence = true;
       bar_delimiter = 0;
       input_delay = 2;
       format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];

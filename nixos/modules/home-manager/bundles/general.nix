@@ -7,10 +7,7 @@
   colorScheme = inputs.nix-colors.colorSchemes.ocean;
 
   myHMModules = {
-    nvim = {
-      enable = true;
-      configPath = ./../../../../configs/nvim;
-    };
+    nvim.enable = true;
     bash.enable = true;
   };
 

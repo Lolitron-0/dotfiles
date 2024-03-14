@@ -100,8 +100,11 @@ in
   gtk.cursorTheme.package = pkgs.bibata-cursors;
   gtk.cursorTheme.name = "Bibata-Modern-Ice";
 
-  gtk.iconTheme.package = gruvboxPlus;
-  gtk.iconTheme.name = "GruvboxPlus";
+  # gtk.iconTheme.package = gruvboxPlus;
+  # gtk.iconTheme.name = "GruvboxPlus";
+
+  gtk.iconTheme.package = pkgs.candy-icons;
+  gtk.iconTheme.name = "candy-icons";
 
   xdg.configFile."gtk-4.0/gtk.css" = {
     text = cssContent;

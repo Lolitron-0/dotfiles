@@ -1,0 +1,57 @@
+    * {
+    	background-image: none;
+    	box-shadow: none;
+    	font-family: "DroidSansM Nerd Font";
+    	font-size: 17px;
+    }
+
+    window {
+    	background-color: rgba(12, 12, 12, 0.9);
+    }
+
+    button {
+    	margin: 50px;
+    	border-radius: 20px;
+    	border-color: transparent;
+    	text-decoration-color: @theme_text_color;
+    	color: @theme_text_color;
+    	background-color: shade(alpha(@theme_text_colors, 0.9), 1.25);
+    	border-style: solid;
+    	border-width: 2px;
+    	background-repeat: no-repeat;
+    	background-position: center;
+    	background-size: 25%;
+    	text-shadow: alpha(@theme_text_color, 0.6) 0px 0px 10px;
+    }
+
+    button:focus,
+    button:active,
+    button:hover {
+    	border-color: alpha(@accent_bg_color, 0.5);
+    	box-shadow: 0px 0px 8px 1px alpha(@theme_text_color, 0.6);
+    	outline-style: none;
+    }
+
+    #lock {
+    	background-image: image(url("./icons/lock.png"), url("./icons/lock.png"));
+    }
+
+    #logout {
+    	background-image: image(url("./icons/logout.png"), url("./icons/logout.png"));
+    }
+
+    #suspend {
+    	background-image: image(url("./icons/suspend.png"), url("./icons/suspend.png"));
+    }
+
+    #hibernate {
+    	background-image: image(url("./icons/hibernate.png"), url("./icons/hibernate.png"));
+    }
+
+    #shutdown {
+    	background-image: image(url("./icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    }
+
+    #reboot {
+    	background-image: image(url("./icons/reboot.png"), url("./icons/reboot.png"));
+    }

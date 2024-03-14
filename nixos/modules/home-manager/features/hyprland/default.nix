@@ -10,9 +10,6 @@ let
         	systemctl --user import-environment PATH &
         	systemctl --user restart xdg-desktop-portal.service &
 
-
-        	waybar &
-    		
         	sleep 3
         	${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
     		
@@ -141,6 +138,8 @@ in
 
           "float, title:^(Picture-in-Picture)$"
           "pin, title:^(Picture-in-Picture)$"
+          "float, title:^(waybar)&"
+          "pin, title:^(waybar)&"
         ];
 
         windowrule = [
@@ -151,14 +150,16 @@ in
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
         "$menu" = "rofi -show drun -show-icons";
-        #"$menu-command" = "wofi --show drun";
+        #"$menu" = "wofi --show drun";
 
         bind = bindMap.bind;
         binde = bindMap.binde;
         bindm = bindMap.bindm;
 
         exec-once = [
+          "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           "${pkgs.bash}/bin/bash ${startScript}/bin/hyprinit"
+          "waybar"
         ];
       };
     };
@@ -174,9 +175,9 @@ in
 
       swww
       networkmanagerapplet
+	  hyprlock
 
-      rofi-wayland
-      wofi
+      #rofi-wayland
     ];
   };
 }
