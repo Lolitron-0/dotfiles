@@ -52,6 +52,116 @@ return packer.startup(function(use)
 		end,
 	}
 
+	use { 
+		"mfussenegger/nvim-dap",
+		config = function()
+			local dap = require('dap')
+			 dap.configurations.cpp = {
+				{
+					name = "Launch",
+					type = "lldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+					end,
+					cwd = '${workspaceFolder}',
+					stopOnEntry = false,
+					-- args = function()
+					-- 	local str = vim.fn.input('Args: ', '', 'args')
+					-- 	local t={}
+					-- 	local sep = " "
+					-- 	for str in string.gmatch(str, "([^"..sep.."]+)") do
+					-- 		table.insert(t, str)
+					-- 	end
+					-- 	print(t)
+					-- 	return t
+					-- end,
+					args = {},
+					runInTerminal = true,
+				}
+        	}
+			dap.adapters.lldb = {
+			  type = 'executable',
+			  command = '/run/current-system/sw/bin/lldb-vscode', -- adjust as needed, must be absolute path
+			  name = 'lldb'
+			}
+
+			vim.keymap.set('n', '<F9>', require'dap'.toggle_breakpoint)	
+			vim.keymap.set('n', '<F5>', function() 
+											require'dap'.continue()
+										end)	
+			vim.keymap.set('n', '<F10>', require'dap'.step_over)	
+			vim.keymap.set('n', '<F11>', require'dap'.step_into)	
+			vim.keymap.set('n', '<F9>', require'dap'.toggle_breakpoint)	
+		end
+	}
+	use { 
+		"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"},
+		config = function()
+			local dap, dapui,tree = require("dap"), require("dapui"), require("nvim-tree.api") 
+			dapui.setup{
+			icons = {
+			  collapsed = "",
+			  current_frame = "",
+			  expanded = ""
+			},
+			layouts = { {
+				elements = { {
+					id = "scopes",
+					size = 0.45
+				  }, {
+					id = "stacks",
+					size = 0.25
+				  }, {
+					id = "breakpoints",
+					size = 0.15
+				  }, {
+					id = "watches",
+					size = 0.15
+				  } },
+				position = "right",
+				size = 40
+			  }, {
+				elements = { {
+					id = "repl",
+					size = 0.5
+				  }, {
+					id = "console",
+					size = 0.5
+				  } },
+				position = "bottom",
+				size = 10
+			  } },
+
+			}
+
+			dap.listeners.before.attach.dapui_config = function()
+			  dapui.open()
+			  tree.tree.close()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+			  dapui.open()
+			  tree.tree.close()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+			  dapui.close()
+			  tree.tree.open()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+			  dapui.close()
+			  tree.tree.open()
+			end
+		end
+	}
+	use { 
+		'theHamsta/nvim-dap-virtual-text',
+		config = function()
+			require("nvim-dap-virtual-text").setup {
+			  show_stop_reason = false,
+			}
+		end
+	}
+
 	use { 'neovim/nvim-lspconfig' }
 	use { 'elkowar/yuck.vim' }
 
@@ -202,16 +312,22 @@ return packer.startup(function(use)
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
 	use { 'shaunsingh/nord.nvim' }
-	use { "xiyaowong/transparent.nvim",
-		config = function()
-			require("transparent").setup{
-				exclude_groups={"CursorLine"}
-			}
-			-- require('transparent').clear_prefix('lualine')
-			require('transparent').clear_prefix('Dashbard')
-			vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
-		end
-	}
+	use { "xiyaowong/transparent.nvim", config = function()
+		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
+		require("transparent").setup{
+			groups = { -- table: default groups
+			'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+			'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+			'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+			'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalSB', 'Pmenu',
+		  },
+		  --exclude_groups={"CursorLine"}
+		}
+		-- require('transparent').clear_prefix('lualine')
+		require('transparent').clear_prefix('Dashboard')
+		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
+	end}
+
 
 	use "sindrets/diffview.nvim"
 
@@ -219,5 +335,7 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 
+
+	vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
 	-- use 'cohama/lexima.vim'
 end)
