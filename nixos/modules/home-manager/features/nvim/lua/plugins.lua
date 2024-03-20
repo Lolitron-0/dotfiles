@@ -37,6 +37,8 @@ packer.init({
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	use 'wakatime/vim-wakatime'
+
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
@@ -56,35 +58,40 @@ return packer.startup(function(use)
 		"mfussenegger/nvim-dap",
 		config = function()
 			local dap = require('dap')
-			 dap.configurations.cpp = {
-				{
-					name = "Launch",
-					type = "lldb",
-					request = "launch",
-					program = function()
-						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-					end,
-					cwd = '${workspaceFolder}',
-					stopOnEntry = false,
-					-- args = function()
-					-- 	local str = vim.fn.input('Args: ', '', 'args')
-					-- 	local t={}
-					-- 	local sep = " "
-					-- 	for str in string.gmatch(str, "([^"..sep.."]+)") do
-					-- 		table.insert(t, str)
-					-- 	end
-					-- 	print(t)
-					-- 	return t
-					-- end,
-					args = {},
-					runInTerminal = true,
-				}
-        	}
+			 -- dap.configurations.cpp = {
+				-- {
+				-- 	name = "Launch",
+				-- 	type = "lldb",
+				-- 	request = "launch",
+				-- 	program = function()
+				-- 		return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+				-- 	end,
+				-- 	cwd = '${workspaceFolder}',
+				-- 	stopOnEntry = false,
+				-- 	-- args = function()
+				-- 	-- 	local str = vim.fn.input('Args: ', '', 'args')
+				-- 	-- 	local t={}
+				-- 	-- 	local sep = " "
+				-- 	-- 	for str in string.gmatch(str, "([^"..sep.."]+)") do
+				-- 	-- 		table.insert(t, str)
+				-- 	-- 	end
+				-- 	-- 	print(t)
+				-- 	-- 	return t
+				-- 	-- end,
+				-- 	args = {},
+				-- 	runInTerminal = true,
+				-- }
+    --     	}
 			dap.adapters.lldb = {
 			  type = 'executable',
 			  command = '/run/current-system/sw/bin/lldb-vscode', -- adjust as needed, must be absolute path
 			  name = 'lldb'
 			}
+
+			vim.api.nvim_create_user_command('LoadLaunchJSON',function()
+				require('dap.ext.vscode').load_launchjs("launch.json",
+				{ lldb = {'c', 'cpp'} })
+			end,{})
 
 			vim.keymap.set('n', '<F9>', require'dap'.toggle_breakpoint)	
 			vim.keymap.set('n', '<F5>', function() 
@@ -96,10 +103,9 @@ return packer.startup(function(use)
 		end
 	}
 	use { 
-		"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"},
+		"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
 		config = function()
-			local dap, dapui,tree = require("dap"), require("dapui"), require("nvim-tree.api") 
-			dapui.setup{
+			require("dapui").setup{
 			icons = {
 			  collapsed = "",
 			  current_frame = "",
@@ -135,6 +141,7 @@ return packer.startup(function(use)
 
 			}
 
+			local dap, dapui,tree = require("dap"), require("dapui"), require("nvim-tree.api") 
 			dap.listeners.before.attach.dapui_config = function()
 			  dapui.open()
 			  tree.tree.close()
@@ -153,6 +160,7 @@ return packer.startup(function(use)
 			end
 		end
 	}
+
 	use { 
 		'theHamsta/nvim-dap-virtual-text',
 		config = function()

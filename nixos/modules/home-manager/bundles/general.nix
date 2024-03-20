@@ -30,9 +30,10 @@
     nixpkgs-fmt
     wl-clipboard
 	killall
+	cloc
 
 	qtcreator
-	cloc
+	vscode
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
