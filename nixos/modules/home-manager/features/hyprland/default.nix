@@ -8,7 +8,7 @@ let
           swww clear 
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
-		  blueman-applet
+		  blueman-applet &
     	  hyprctl setcursor Bibata-Modern-Ice 16 &
 
           sleep 3
