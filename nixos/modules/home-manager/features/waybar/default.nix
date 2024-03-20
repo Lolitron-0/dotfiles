@@ -40,7 +40,6 @@ let
       "pulseaudio"
       "pulseaudio/slider"
       "hyprland/language"
-      "bluetooth"
       "battery"
       "clock"
       "tray"
