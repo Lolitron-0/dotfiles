@@ -3,9 +3,7 @@ let
   # systemctl --user import-environment PATH &
   # systemctl --user restart xdg-desktop-portal.service &
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
-          swww init &
-		  sleep 1
-          swww clear 
+          swww init && swww clear &
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
 		  blueman-applet &
@@ -176,7 +174,6 @@ in
       swww
       hyprpaper
       networkmanagerapplet
-	  blueman
       hyprlock
 
       #rofi-wayland

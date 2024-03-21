@@ -74,8 +74,14 @@ in
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.tapping = true;
 
+  services.blueman.enable = true;
+
   # services.xserver.displayManager.defaultSession =
   #   lib.mkIf cfg.sharedSettings.hyprland.enable "hyprland";
+
+  environment.systemPackages = with pkgs;[
+    blueman
+  ];
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
