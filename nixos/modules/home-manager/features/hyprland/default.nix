@@ -7,6 +7,7 @@ let
 
           sleep 3
           ${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
+		  sleep 4
 
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
 		  blueman-applet &
