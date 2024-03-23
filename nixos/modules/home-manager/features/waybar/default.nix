@@ -58,8 +58,13 @@ let
     };
 
     battery = {
+      states = { 
+	  	warning =20;
+		critical=8;
+	  };
       format-icons = [ "" "" "" "" "" ];
       format = "  {icon}  ";
+	  tooltip-format = "{capacity}% - {timeTo}";
     };
 
     clock = {
@@ -98,10 +103,10 @@ let
 
     "custom/logo" = {
       exec = "echo ' '";
-	  exec-on-event = false;
+      exec-on-event = false;
       format = "{}";
       on-double-click = "wlogout -b 2 -m 50";
-	  tooltip = false;
+      tooltip = false;
     };
 
     "hyprland/window" = {

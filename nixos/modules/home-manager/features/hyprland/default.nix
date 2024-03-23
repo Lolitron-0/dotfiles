@@ -5,12 +5,12 @@ let
   startScript = pkgs.writeShellScriptBin "hyprinit" ''
           swww init && swww clear &
 
+          sleep 3
+          ${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
+
     	  ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator & 
 		  blueman-applet &
     	  hyprctl setcursor Bibata-Modern-Ice 16 &
-
-          sleep 3
-          ${pkgs.swww}/bin/swww img ${./Snow-valley.jpg} &
   '';
 
   bindMap = import ./bindMap.nix;

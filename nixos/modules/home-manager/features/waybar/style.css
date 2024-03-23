@@ -67,10 +67,6 @@ tooltip {
 	margin: 3px 3px 3px 3px;
 }
 
-#custom-battery {
-	color: @green_1
-}
-
 /* resource monitor block */
 
 #cpu {
@@ -130,6 +126,14 @@ tooltip {
 #bluetooth {
 	padding-left: 4px;
 	padding-right: 0px;
+}
+
+#battery.warning {
+	color: @orange_1
+}
+
+#battery.critical {
+	color: @red_1
 }
 
 #pulseaudio {
