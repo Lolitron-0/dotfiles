@@ -137,8 +137,10 @@ in
 
           "float, title:^(Picture-in-Picture)$"
           "pin, title:^(Picture-in-Picture)$"
-          "float, title:^(waybar)&"
-          "pin, title:^(waybar)&"
+          "float, title:^(waybar)$"
+          "pin, title:^(waybar)$"
+		  "float, class:^.*(blueman-manager).*$"
+		  "float, class:^.*(Nautilus).*$"
         ];
 
         windowrule = [

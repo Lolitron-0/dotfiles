@@ -132,8 +132,13 @@ tooltip {
 	color: @orange_1
 }
 
-#battery.critical {
-	color: @red_1
+#battery.discharging.critical {
+	color: @red_1;
+	font-size: 26pt;
+}
+
+
+#battery.charging.critical {
 }
 
 #pulseaudio {

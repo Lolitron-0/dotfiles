@@ -32,6 +32,8 @@
     pipes
     cava
     s-tui # waiting to fix
+
+	chromium
   ];
 
   services.mako = {

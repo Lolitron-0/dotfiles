@@ -25,7 +25,7 @@
   users.users.niten = {
     isNormalUser = true;
     description = "niten";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
       firefox
       #  thunderbird

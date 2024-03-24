@@ -58,13 +58,14 @@ let
     };
 
     battery = {
-      states = { 
-	  	warning =20;
-		critical=8;
-	  };
+      interval = 30;
+      states = {
+        warning = 20;
+        critical = 8;
+      };
       format-icons = [ "" "" "" "" "" ];
       format = "  {icon}  ";
-	  tooltip-format = "{capacity}% - {timeTo}";
+      tooltip-format = "{capacity}% - {timeTo}";
     };
 
     clock = {
