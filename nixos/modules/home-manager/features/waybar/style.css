@@ -128,13 +128,16 @@ tooltip {
 	padding-right: 0px;
 }
 
-#battery.warning {
+#battery.discharging.warning {
 	color: @orange_1
+}
+
+#battery.charging.warning {
 }
 
 #battery.discharging.critical {
 	color: @red_1;
-	font-size: 26pt;
+	font-size: 32pt;
 }
 
 
