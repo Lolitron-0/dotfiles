@@ -137,7 +137,7 @@ tooltip {
 
 #battery.discharging.critical {
 	color: @red_1;
-	font-size: 32pt;
+	font-size: 50pt;
 }
 
 
