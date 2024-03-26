@@ -35,6 +35,7 @@
     s-tui # waiting to fix
 
 	chromium
+	doxygen_gui
   ];
 
   services.mako = {
