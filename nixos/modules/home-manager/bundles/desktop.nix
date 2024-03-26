@@ -25,6 +25,7 @@
     grim
     slurp
     brightnessctl
+	playerctl
 
     pulsemixer
     pavucontrol

@@ -52,6 +52,13 @@
             else n
           )}") [ 1 2 3 4 5 6 7 8 9 0 ];
 
+  bindl = [
+    ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ", XF86AudioPlay, exec, playerctl play-pause "
+    ", XF86AudioNext, exec, playerctl next "
+    ", XF86AudioPrev, exec, playerctl previous"
+  ];
+
   binde = [
     "$mainMod SHIFT, h, moveactive, -20 0"
     "$mainMod SHIFT, l, moveactive, 20 0"
