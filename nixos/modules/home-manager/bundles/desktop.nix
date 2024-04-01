@@ -26,6 +26,8 @@
     slurp
     brightnessctl
     playerctl
+	xorg.xprop
+	wlprop
 
     pulsemixer
     pavucontrol

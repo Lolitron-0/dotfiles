@@ -141,10 +141,11 @@ in
           "pin, title:^(waybar)$"
 		  "float, class:^.*(blueman-manager).*$"
 		  "float, class:^.*(Nautilus).*$"
+		  "opacity 0.73 override, class:^(Code)$"
         ];
 
         windowrule = [
-          # "opacity 0.5 override 0.5 override,^(kitty)$"
+           "opacity 0.5 override,^.*(Visual Studio Code).*$"
         ];
 
         # Binds
