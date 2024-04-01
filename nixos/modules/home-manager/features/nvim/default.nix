@@ -16,7 +16,7 @@ in
       coc-clangd
       coc-lua
       coc-cmake
-	  coc-css
+      coc-css
     ];
     coc = {
       enable = true;
@@ -35,10 +35,23 @@ in
               };
             };
           };
+          "asm-lsp" = {
+            "command" = "asm-lsp";
+            "rootPatterns" = [ ".git/" ];
+            "filetypes" = [
+              "asm"
+              "nasm"
+              "s"
+              "S"
+            ];
+          };
         };
       };
     };
   };
+
+  home.packages = with pkgs; [
+  ];
 
   xdg.configFile."nvim" = {
     source = ./.;

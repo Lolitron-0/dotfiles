@@ -6,8 +6,8 @@
     eww.enable = true;
     waybar.enable = true;
     gtk.enable = true;
-	wlogout.enable = true;
-	rofi.enable = true;
+    wlogout.enable = true;
+    rofi.enable = true;
   };
 
   programs.btop = {
@@ -25,7 +25,7 @@
     grim
     slurp
     brightnessctl
-	playerctl
+    playerctl
 
     pulsemixer
     pavucontrol
@@ -34,8 +34,9 @@
     cava
     s-tui # waiting to fix
 
-	chromium
-	doxygen_gui
+    vscode
+    chromium
+    doxygen_gui
   ];
 
   services.mako = {

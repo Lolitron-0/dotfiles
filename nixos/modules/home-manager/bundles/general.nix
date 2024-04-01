@@ -24,19 +24,19 @@
     kitty
     kitty-themes
 
-	python3
-	python3.pkgs.pip
+    python3
+    python3.pkgs.pip
 
     libnotify
     lsd
     nil
     nixpkgs-fmt
     wl-clipboard
-	killall
-	cloc
+    killall
+    cloc
 
-	qtcreator
-	# vscode
+    qtcreator
+    # vscode
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
