@@ -170,12 +170,7 @@ return packer.startup(function(use)
 		end
 	}
 
-	use {
-		'neovim/nvim-lspconfig', 
-		config = function()
-			-- require'lspconfig'.asm_lsp.setup{}
-		end
-	}
+	use { 'neovim/nvim-lspconfig' }
 	use { 'elkowar/yuck.vim' }
 
 	use {

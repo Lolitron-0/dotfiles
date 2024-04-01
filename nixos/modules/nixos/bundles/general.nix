@@ -108,6 +108,7 @@ in
 
   environment.systemPackages = with pkgs;[
     blueman
+	nasm
   ];
 
   fonts.packages = with pkgs; [
