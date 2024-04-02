@@ -141,7 +141,7 @@ in
           "pin, title:^(waybar)$"
 		  "float, class:^.*(blueman-manager).*$"
 		  "float, class:^.*(Nautilus).*$"
-		  "opacity 0.73 override, class:^(Code)$"
+		  "opacity 0.75 override, class:^(Code)$"
         ];
 
         windowrule = [
