@@ -109,6 +109,11 @@ in
   environment.systemPackages = with pkgs;[
     blueman
 	nasm
+	libgcc
+	libgccjit
+	glibc
+	glibc_multi
+	gccMultiStdenv
   ];
 
   fonts.packages = with pkgs; [
