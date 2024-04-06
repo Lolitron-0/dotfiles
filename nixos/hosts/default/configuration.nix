@@ -15,7 +15,7 @@
   myNixOSModules =
     {
       bundles.general.enable = true;
-      sharedSettings.hyprland.enable = false;
+      sharedSettings.hyprland.enable = true;
       userName = "niten";
       userConfig = ./home.nix;
     };
