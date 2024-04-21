@@ -35,6 +35,7 @@
     killall
     cloc
 
+	tor
 	tor-browser
     qtcreator
     # vscode
