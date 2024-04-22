@@ -103,8 +103,10 @@ in
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
   '';
 
+
   # services.xserver.displayManager.defaultSession =
   #   lib.mkIf cfg.sharedSettings.hyprland.enable "hyprland";
+  # services.mongodb.enable = true;
 
   environment.systemPackages = with pkgs;[
     blueman

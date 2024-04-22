@@ -86,11 +86,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-mongodb-pin": {
+      "locked": {
+        "lastModified": 1708949262,
+        "narHash": "sha256-vmhCU7q/LUi20cPaG1eMzHBlPK5e2++MisK7cqL3fFw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "106c4ac6aa6e325263b740fd30bdda3b430178ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "106c4ac6aa6e325263b740fd30bdda3b430178ef",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nix-colors": "nix-colors",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-mongodb-pin": "nixpkgs-mongodb-pin"
       }
     }
   },
