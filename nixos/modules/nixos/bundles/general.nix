@@ -107,6 +107,7 @@ in
   # services.xserver.displayManager.defaultSession =
   #   lib.mkIf cfg.sharedSettings.hyprland.enable "hyprland";
   # services.mongodb.enable = true;
+  services.cassandra.enable = true;
 
   environment.systemPackages = with pkgs;[
     blueman
