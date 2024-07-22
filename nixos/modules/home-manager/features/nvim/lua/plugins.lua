@@ -45,7 +45,7 @@ return packer.startup(function(use)
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
 			require 'nvim-treesitter.configs'.setup {
-				ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query", "nix" },
+				ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc", "query", "nix", "markdown", "markdown_inline" },
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false,
@@ -53,6 +53,15 @@ return packer.startup(function(use)
 			}
 		end,
 	}
+
+	use({
+		'MeanderingProgrammer/markdown.nvim',
+		after = { 'nvim-treesitter' },
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+		config = function()
+			require('render-markdown').setup({})
+		end,
+	})
 
 	use { 
 		"mfussenegger/nvim-dap",
@@ -188,7 +197,7 @@ return packer.startup(function(use)
 		event = "VimEnter",
 		config = function()
 			require("drop").setup {
-				theme = "spring", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
+				theme = "summer", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
 				filetypes = { --[[ "dashboard", ]] "alpha", "starter" },
 			}
 		end,

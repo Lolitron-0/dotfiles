@@ -1,7 +1,7 @@
 " Setup
-"
+" Link: ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim/ .config/
 " Node: https://github.com/nodesource/distributions
-" Powerline: sudo apt install python3-powerline fonts-powerline
+" Packages: sudo apt install -y python3-powerline fonts-powerline xclip
 " Coc: coc-clangd coc-lua coc-cmake
 " Nerd: Droid Sans --- https://www.nerdfonts.com/font-downloads
 
