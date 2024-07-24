@@ -40,11 +40,13 @@ map <Enter> o<ESC>
 syntax on
 
 
-set tabstop=4
-set shiftwidth=4
-set encoding=UTF-8
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
 set splitright
 set smarttab
+set encoding=UTF-8
 set cursorline
 set number
 set belloff=all

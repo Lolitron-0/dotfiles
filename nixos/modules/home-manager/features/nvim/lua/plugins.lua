@@ -66,6 +66,11 @@ return packer.startup(function(use)
 	use { 
 		"mfussenegger/nvim-dap",
 		config = function()
+
+			-- if fails to start with:
+			-- Error on launch: Failed to attach to the target process. Timed out trying to get messages from the runInTerminal launcher
+			-- echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
 			local dap = require('dap')
 			 -- dap.configurations.cpp = {
 				-- {
@@ -93,7 +98,7 @@ return packer.startup(function(use)
     --     	}
 			dap.adapters.lldb = {
 			  type = 'executable',
-			  command = '/run/current-system/sw/bin/lldb-vscode', -- adjust as needed, must be absolute path
+			  command = '/usr/bin/lldb-vscode-14', -- adjust as needed, must be absolute path
 			  name = 'lldb'
 			}
 
