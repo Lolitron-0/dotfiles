@@ -14,10 +14,6 @@ rm -rf ~/.config/powerline-shell
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
-<<<<<<< HEAD
-ln -s ~/dotfiles/nixos/modules/home-manager/features/.tmux.conf ~
-=======
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
->>>>>>> 675cdba (powerline)
 
 echo "Links created"
