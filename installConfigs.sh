@@ -7,9 +7,6 @@ echo "Don't forget to add powerline!"
 # if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 #     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 # fi
-#
-# alias ls=lsd
-# alias gittok="xclip -sel c < ~/dev/git_token"
 
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
@@ -20,3 +17,4 @@ ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
 
 echo "Links created"
+
