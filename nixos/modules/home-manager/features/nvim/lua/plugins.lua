@@ -341,12 +341,13 @@ return packer.startup(function(use)
 			'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
 			'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
 			'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-			'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalSB', 'Pmenu',
+			'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalSB', 'Pmenu', 'CocInlayHint'
 		  },
 		  --exclude_groups={"CursorLine"}
 		}
 		-- require('transparent').clear_prefix('lualine')
 		require('transparent').clear_prefix('Dashboard')
+		require('transparent').clear_prefix('CursorLine')
 		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
 	end}
 

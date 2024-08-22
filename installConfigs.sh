@@ -15,6 +15,7 @@ rm -rf ~/.config/powerline-shell
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
+
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
 rm ~/.zshrc
 rm -r ~/.oh-my-zsh/custom
