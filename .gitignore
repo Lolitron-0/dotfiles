@@ -1,1 +1,2 @@
 nixos/modules/home-manager/features/nvim/plugin/
+nixos/modules/home-manager/features/nvim/coc/
