@@ -15,8 +15,9 @@ rm -rf ~/.config/powerline-shell
 ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
+rm ~/.zshrc
 ln -s ~/dotfiles/nixos/modules/home-manager/features/zsh/.zshrc ~
-ln -s ~/dotfiles/nixos/modules/home-manager/features/zsh/.oh-my-zsh ~
+ln -s ~/dotfiles/nixos/modules/home-manager/features/zsh/custom ~/.oh-my-zsh/custom
 
 echo "Links created"
 
