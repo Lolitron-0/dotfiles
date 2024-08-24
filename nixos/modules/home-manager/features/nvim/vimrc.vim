@@ -35,6 +35,7 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
+inoremap JJ <ESC>
 map <Enter> o<ESC>
 
 syntax on
