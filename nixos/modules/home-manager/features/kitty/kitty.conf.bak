@@ -1,7 +1,9 @@
 # BEGIN_KITTY_THEME
-# Solarized Dark
+# Adwaita dark
 include current-theme.conf
 # END_KITTY_THEME
+
+font_family family="0xProto Nerd Font Mono"
 
 tab_bar_style powerline
 
@@ -16,3 +18,8 @@ map ctrl+shift+left neighboring_window left
 map ctrl+shift+right neighboring_window right
 map ctrl+shift+up neighboring_window up
 map ctrl+shift+down neighboring_window down
+
+transparency yes
+background_opacity 0.6
+background_blur 50
+
