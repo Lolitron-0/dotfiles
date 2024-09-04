@@ -10,6 +10,12 @@ echo "Don't forget to add powerline!"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k || true
 git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh || true
 
+mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
+	mc_dracula_path=~/dotfiles/nixos/modules/home-manager/features/mc/mc-dracula-theme/skins
+	ln -s ${mc_dracula_path}/dracula.ini
+	ln -s ${mc_dracula_path}/dracula256.ini
+cd -
+
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
 rm -rf ~/.config/powerline-shell
