@@ -11,6 +11,7 @@ echo "Don't forget to add powerline!"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k || true
 git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh || true
 
+
 rm -rf ~/.local/share/mc/skins
 mkdir -p ~/.local/share/mc/skins && cd ~/.local/share/mc/skins
 	mc_dracula_path=~/dotfiles/nixos/modules/home-manager/features/mc/mc-dracula-theme/skins
@@ -24,6 +25,18 @@ rm -rf ~/.config/powerline-shell
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
+
+rm -rf ~/.config/waybar
+ln -s ~/dotfiles/nixos/modules/home-manager/features/waybar ~/.config
+
+rm -rf ~/.config/wlogout
+ln -s ~/dotfiles/nixos/modules/home-manager/features/wlogout ~/.config
+
+rm -rf ~/.config/rofi
+ln -s ~/dotfiles/nixos/modules/home-manager/features/rofi ~/.config
+
+rm -f ~/.config/hypr/hyprland.conf
+ln -s ~/dotfiles/nixos/modules/home-manager/features/hyprland/hyprland.conf ~/.config/hypr
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
 
