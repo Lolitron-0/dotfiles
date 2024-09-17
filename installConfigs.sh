@@ -38,8 +38,8 @@ ln -s ~/dotfiles/nixos/modules/home-manager/features/rofi ~/.config
 rm -rf ~/.config/mako
 ln -s ~/dotfiles/nixos/modules/home-manager/features/mako ~/.config
 
-rm -f ~/.config/hypr/hyprland.conf
-ln -s ~/dotfiles/nixos/modules/home-manager/features/hyprland/hyprland.conf ~/.config/hypr
+rm -rf ~/.config/hypr
+ln -s ~/dotfiles/nixos/modules/home-manager/features/hyprland ~/.config/hypr
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/powerline-shell ~/.config
 
