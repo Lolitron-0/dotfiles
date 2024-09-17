@@ -35,6 +35,9 @@ ln -s ~/dotfiles/nixos/modules/home-manager/features/wlogout ~/.config
 rm -rf ~/.config/rofi
 ln -s ~/dotfiles/nixos/modules/home-manager/features/rofi ~/.config
 
+rm -rf ~/.config/mako
+ln -s ~/dotfiles/nixos/modules/home-manager/features/mako ~/.config
+
 rm -f ~/.config/hypr/hyprland.conf
 ln -s ~/dotfiles/nixos/modules/home-manager/features/hyprland/hyprland.conf ~/.config/hypr
 
