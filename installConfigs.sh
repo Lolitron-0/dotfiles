@@ -1,13 +1,5 @@
 pip install powerline-shell
 
-echo "Don't forget to add powerline!"
-# function _update_ps1() {
-#     PS1=$(powerline-shell $?)
-# }
-#
-# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-# fi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k || true
 git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh || true
 
@@ -21,7 +13,6 @@ cd -
 
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
-rm -rf ~/.config/powerline-shell
 
 ln -s ~/dotfiles/nixos/modules/home-manager/features/nvim ~/.config
 ln -s ~/dotfiles/nixos/modules/home-manager/features/kitty ~/.config
