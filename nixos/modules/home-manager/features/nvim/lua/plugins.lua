@@ -63,123 +63,122 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use { 
+	use {
 		"mfussenegger/nvim-dap",
 		config = function()
-
 			-- if fails to start with:
 			-- Error on launch: Failed to attach to the target process. Timed out trying to get messages from the runInTerminal launcher
 			-- echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 
 			local dap = require('dap')
-			 -- dap.configurations.cpp = {
-				-- {
-				-- 	name = "Launch",
-				-- 	type = "lldb",
-				-- 	request = "launch",
-				-- 	program = function()
-				-- 		return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-				-- 	end,
-				-- 	cwd = '${workspaceFolder}',
-				-- 	stopOnEntry = false,
-				-- 	-- args = function()
-				-- 	-- 	local str = vim.fn.input('Args: ', '', 'args')
-				-- 	-- 	local t={}
-				-- 	-- 	local sep = " "
-				-- 	-- 	for str in string.gmatch(str, "([^"..sep.."]+)") do
-				-- 	-- 		table.insert(t, str)
-				-- 	-- 	end
-				-- 	-- 	print(t)
-				-- 	-- 	return t
-				-- 	-- end,
-				-- 	args = {},
-				-- 	runInTerminal = true,
-				-- }
-    --     	}
+			-- dap.configurations.cpp = {
+			-- {
+			-- 	name = "Launch",
+			-- 	type = "lldb",
+			-- 	request = "launch",
+			-- 	program = function()
+			-- 		return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+			-- 	end,
+			-- 	cwd = '${workspaceFolder}',
+			-- 	stopOnEntry = false,
+			-- 	-- args = function()
+			-- 	-- 	local str = vim.fn.input('Args: ', '', 'args')
+			-- 	-- 	local t={}
+			-- 	-- 	local sep = " "
+			-- 	-- 	for str in string.gmatch(str, "([^"..sep.."]+)") do
+			-- 	-- 		table.insert(t, str)
+			-- 	-- 	end
+			-- 	-- 	print(t)
+			-- 	-- 	return t
+			-- 	-- end,
+			-- 	args = {},
+			-- 	runInTerminal = true,
+			-- }
+			--     	}
 			dap.adapters.lldb = {
-			  type = 'executable',
-			  command = '/usr/bin/lldb-dap', -- adjust as needed, must be absolute path
-			  name = 'lldb'
+				type = 'executable',
+				command = '/usr/bin/lldb-dap-18', -- adjust as needed, must be absolute path
+				name = 'lldb'
 			}
 
-			vim.api.nvim_create_user_command('LoadLaunchJSON',function()
+			vim.api.nvim_create_user_command('LoadLaunchJSON', function()
 				require('dap.ext.vscode').load_launchjs("launch.json",
-				{ lldb = {'c', 'cpp'} })
-			end,{})
+					{ lldb = { 'c', 'cpp' } })
+			end, {})
 
-			vim.keymap.set('n', '<F9>', require'dap'.toggle_breakpoint)	
-			vim.keymap.set('n', '<F5>', function() 
-											require'dap'.continue()
-										end)	
-			vim.keymap.set('n', '<F10>', require'dap'.step_over)	
-			vim.keymap.set('n', '<F11>', require'dap'.step_into)	
-			vim.keymap.set('n', '<F9>', require'dap'.toggle_breakpoint)	
+			vim.keymap.set('n', '<F9>', require 'dap'.toggle_breakpoint)
+			vim.keymap.set('n', '<F5>', function()
+				require 'dap'.continue()
+			end)
+			vim.keymap.set('n', '<F10>', require 'dap'.step_over)
+			vim.keymap.set('n', '<F11>', require 'dap'.step_into)
+			vim.keymap.set('n', '<F9>', require 'dap'.toggle_breakpoint)
 		end
 	}
-	use { 
-		"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
+	use {
+		"rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 		config = function()
-			require("dapui").setup{
-			icons = {
-			  collapsed = "",
-			  current_frame = "",
-			  expanded = ""
-			},
-			layouts = { {
-				elements = { {
-					id = "scopes",
-					size = 0.45
-				  }, {
-					id = "stacks",
-					size = 0.25
-				  }, {
-					id = "breakpoints",
-					size = 0.15
-				  }, {
-					id = "watches",
-					size = 0.15
-				  } },
-				position = "right",
-				size = 40
-			  }, {
-				elements = { {
-					id = "repl",
-					size = 0.5
-				  }, {
-					id = "console",
-					size = 0.5
-				  } },
-				position = "bottom",
-				size = 10
-			  } },
+			require("dapui").setup {
+				icons = {
+					collapsed = "",
+					current_frame = "",
+					expanded = ""
+				},
+				layouts = { {
+					elements = { {
+						id = "scopes",
+						size = 0.45
+					}, {
+						id = "stacks",
+						size = 0.25
+					}, {
+						id = "breakpoints",
+						size = 0.15
+					}, {
+						id = "watches",
+						size = 0.15
+					} },
+					position = "right",
+					size = 40
+				}, {
+					elements = { {
+						id = "repl",
+						size = 0.5
+					}, {
+						id = "console",
+						size = 0.5
+					} },
+					position = "bottom",
+					size = 10
+				} },
 
 			}
 
-			local dap, dapui,tree = require("dap"), require("dapui"), require("nvim-tree.api") 
+			local dap, dapui, tree = require("dap"), require("dapui"), require("nvim-tree.api")
 			dap.listeners.before.attach.dapui_config = function()
-			  dapui.open()
-			  tree.tree.close()
+				dapui.open()
+				tree.tree.close()
 			end
 			dap.listeners.before.launch.dapui_config = function()
-			  dapui.open()
-			  tree.tree.close()
+				dapui.open()
+				tree.tree.close()
 			end
 			dap.listeners.before.event_terminated.dapui_config = function()
-			  dapui.close()
-			  tree.tree.open()
+				dapui.close()
+				tree.tree.open()
 			end
 			dap.listeners.before.event_exited.dapui_config = function()
-			  dapui.close()
-			  tree.tree.open()
+				dapui.close()
+				tree.tree.open()
 			end
 		end
 	}
 
-	use { 
+	use {
 		'theHamsta/nvim-dap-virtual-text',
 		config = function()
 			require("nvim-dap-virtual-text").setup {
-			  show_stop_reason = false,
+				show_stop_reason = false,
 			}
 		end
 	}
@@ -238,7 +237,7 @@ return packer.startup(function(use)
 		config = function()
 			require("auto-session").setup {
 				log_level = "error",
-				auto_session_suppress_dirs = {"~/"}
+				auto_session_suppress_dirs = { "~/" }
 			}
 		end
 	}
@@ -269,7 +268,8 @@ return packer.startup(function(use)
 		event = 'VimEnter',
 		config = function()
 			local db = require('dashboard')
-			db.setup(require "dashdoard_config") vim.cmd [[hi link DashboardHeader String]]
+			db.setup(require "dashdoard_config")
+			vim.cmd [[hi link DashboardHeader String]]
 			-- vim.cmd [[hi DashboardHeader ctermfg=13 guifg=magenta]]
 			--vim.cmd [[hi link DashboardFooter String]]
 			--vim.cmd [[hi DashboardFooter ctermfg=13 guifg=magenta]]
@@ -323,9 +323,9 @@ return packer.startup(function(use)
 	use { 'rebelot/kanagawa.nvim' }
 	use { 'ellisonleao/gruvbox.nvim',
 		config = function()
-			require("gruvbox").setup{
+			require("gruvbox").setup {
 				contrast = "hard",
-				transparent_mode=true
+				transparent_mode = true
 			}
 			vim.o.background = 'dark'
 			vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
@@ -336,20 +336,20 @@ return packer.startup(function(use)
 	use { 'shaunsingh/nord.nvim' }
 	use { "xiyaowong/transparent.nvim", config = function()
 		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
-		require("transparent").setup{
+		require("transparent").setup {
 			groups = { -- table: default groups
-			'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-			'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-			'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-			'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalSB', 'Pmenu', 'CocInlayHint'
-		  },
-		  --exclude_groups={"CursorLine"}
+				'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+				'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+				'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+				'SignColumn', 'CursorLineNr', 'EndOfBuffer', 'NormalSB', 'Pmenu', 'CocInlayHint'
+			},
+			--exclude_groups={"CursorLine"}
 		}
 		-- require('transparent').clear_prefix('lualine')
 		require('transparent').clear_prefix('Dashboard')
 		require('transparent').clear_prefix('CursorLine')
 		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
-	end}
+	end }
 
 
 	use "sindrets/diffview.nvim"
@@ -377,6 +377,6 @@ return packer.startup(function(use)
 	end
 
 
-	vim.cmd ("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
+	vim.cmd("hi CursorLine ctermbg=None guibg=None term=underline gui=underline")
 	-- use 'cohama/lexima.vim'
 end)
