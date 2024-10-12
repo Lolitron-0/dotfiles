@@ -95,11 +95,11 @@
 			"mode-mon-col": 3,
 			"on-click-right": "mode",
 			"on-scroll": 1,
-			"weeks-pos": "right"
+			"weeks-pos": "none"
 		},
 		"format": "{:%H:%M}",
 		"format-alt": "󰥔 {:%A, %B %d, %Y (%R)} ",
-		"tooltip-format" :"<span size='9pt' font='Droid Sans Mono'>{calendar}</span>"
+		"tooltip-format": "<span size='9pt' font='Droid Sans Mono'>{calendar}</span>"
 	},
 	"cpu": {
 		"format": "󰍛 {usage}%",

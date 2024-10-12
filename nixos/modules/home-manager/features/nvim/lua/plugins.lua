@@ -98,7 +98,7 @@ return packer.startup(function(use)
     --     	}
 			dap.adapters.lldb = {
 			  type = 'executable',
-			  command = '/usr/bin/lldb-dap-18', -- adjust as needed, must be absolute path
+			  command = '/usr/bin/lldb-dap', -- adjust as needed, must be absolute path
 			  name = 'lldb'
 			}
 
@@ -353,6 +353,24 @@ return packer.startup(function(use)
 
 
 	use "sindrets/diffview.nvim"
+
+	use { "declancm/cinnamon.nvim", config = function()
+		require("cinnamon").setup({
+			keymaps = {
+					basic = true,
+					extra = true,
+			},
+			options = { 
+				mode = "window",
+				step_size = {
+					vertical = 5,
+					horizontal = 5,
+        },
+			},
+		}) 
+	end }
+
+	use 'Exafunction/codeium.vim'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
