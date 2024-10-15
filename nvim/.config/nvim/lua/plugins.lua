@@ -307,6 +307,9 @@ return packer.startup(function(use)
 
 			require("nvim-tree").setup {
 				on_attach = my_on_attach,
+        view = {
+          width = 50,
+        },
 			}
 
 			vim.g.nvim_tree_follow = 1
