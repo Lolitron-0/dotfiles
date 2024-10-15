@@ -1,3 +1,6 @@
-[submodule "nixos/modules/home-manager/features/mc/mc-dracula-theme"]
-	path = nixos/modules/home-manager/features/mc/mc-dracula-theme
-	url = https://github.com/dracula/midnight-commander.git
+[submodule "submodules/powerlevel10k"]
+	path = submodules/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "submodules/.oh-my-zsh"]
+	path = submodules/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh
