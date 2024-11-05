@@ -6,8 +6,7 @@ set -e
 
 stow submodules
 
-stow  btop \
-      hyprland \
+stow  hyprland \
       kitty \
       mako \
       nvim \
