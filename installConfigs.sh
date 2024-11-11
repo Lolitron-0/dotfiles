@@ -2,7 +2,10 @@
 
 set -e
 
-#todo:tmux
+if [ -z "$( ls -A 'submodules' )" ]; then
+   echo "Submodules not found, clonning"
+   git submodule update --init
+fi
 
 stow submodules
 

@@ -5,7 +5,7 @@ local function open_nvim_tree(data)
   -- buffer is a real file on the disk
   local real_file = vim.fn.filereadable(data.file) == 1
 
-  if not real_file then
+  if not real_file or vim.api.nvim_win_get_option(0, "diff") then
     return
   end
 
