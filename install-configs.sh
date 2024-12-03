@@ -7,7 +7,17 @@ BLUE='\033[1;34m'
 ORANGE='\033[0;33m'
 NC='\033[0m'
 
-SUPPORTED_CONFIGS=(hyprland kitty mako nvim rofi tmux waybar wlogout zsh)
+SUPPORTED_CONFIGS=(
+  hyprland
+  kitty
+  mako
+  nvim
+  rofi
+  tmux
+  waybar
+  wlogout
+  zsh
+)
 
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then
    echo -e "Usage: 
@@ -22,7 +32,8 @@ done
    exit
 fi
 
-CONFIGS=$SUPPORTED_CONFIGS
+
+CONFIGS=(${SUPPORTED_CONFIGS[@]})
 if [[ $1 == "-s" ]]; then
   CONFIGS=( ${@:2} )
   for config in "${CONFIGS[@]}"; do
