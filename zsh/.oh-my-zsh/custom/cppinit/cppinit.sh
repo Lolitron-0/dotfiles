@@ -23,6 +23,7 @@ mkdir -p "$project_name"
 cp -a $script_root/exe-template/. "$project_root/"
 
 sed -i -e "s/__PROJECT_NAME__/$project_name/g" $project_root/dev.sh
+sed -i -e "s/__PROJECT_NAME__/$project_name/g" $project_root/launch.json
 sed -i -e "s/__PROJECT_NAME__/$project_name/g" $project_root/CMakeLists.txt
 sed -i -e "s/__PROJECT_NAME__/$project_name/g" $project_root/src/Main.cpp
 
