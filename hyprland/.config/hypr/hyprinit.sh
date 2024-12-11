@@ -3,6 +3,8 @@ swww-daemon --no-cache &
 
 cfg_dir=$HOME/.config/hypr
 
+openrgb --server &
+openrgb -p my
 swww img ${cfg_dir}/Snow-valley.jpg
 sleep 3
 
