@@ -19,7 +19,7 @@ local function open_nvim_tree(data)
   require("nvim-tree.api").tree.open({ focus = false, find_file = true, })
 end
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, { callback = open_nvim_tree })
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, { callback = open_nvim_tree })
 
 -- Save NvimTree in auto-session
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
