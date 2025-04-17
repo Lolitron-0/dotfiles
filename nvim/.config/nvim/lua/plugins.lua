@@ -254,6 +254,23 @@ return packer.startup(function(use)
 	require('telescope').load_extension('project')
 	require('telescope').load_extension('session-lens')
 
+  use {
+    "amitds1997/remote-nvim.nvim",
+    tag = "v0.3.9",
+    requires = {
+       "nvim-lua/plenary.nvim", -- For standard functions
+       "MunifTanjim/nui.nvim", -- To build the plugin UI
+       "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+    },
+    config = function()
+      require("remote-nvim").setup()
+    end
+  }
+ 
+  use({
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+  })
 
 	use {
 		"ahmedkhalf/project.nvim",
@@ -337,6 +354,12 @@ return packer.startup(function(use)
 	use { 'ErichDonGubler/vim-sublime-monokai' }
 	use { "folke/tokyonight.nvim" }
 	use { 'shaunsingh/nord.nvim' }
+  use { "catppuccin/nvim", as = "catppuccin", 
+    config = function()
+      require('catppuccin').setup({flavour = "mocha"})
+    end
+  }
+
 	use { "xiyaowong/transparent.nvim", config = function()
 		vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
 		require("transparent").setup {
