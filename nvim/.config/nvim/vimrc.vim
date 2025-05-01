@@ -24,11 +24,6 @@ if has('syntax') && has('eval')
 endif
 
 
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
@@ -37,6 +32,11 @@ inoremap {;<CR> {<CR>};<ESC>O
 inoremap jj <ESC>
 inoremap JJ <ESC>
 map <Enter> o<ESC>
+
+nmap <C-Left> <C-h>
+nmap <C-Down> <C-j>
+nmap <C-Up> <C-k>
+nmap <C-Right> <C-l>
 
 syntax on
 
