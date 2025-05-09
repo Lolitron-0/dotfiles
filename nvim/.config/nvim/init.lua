@@ -3,6 +3,7 @@ local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 vim.cmd.source(vimrc)
 
 
+-- relative to lua directory
 require("plugins")
 require("autocmds")
 

@@ -1,7 +1,25 @@
 {
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd",
-  "clangd.arguments": [
-  ],
+  "clangd.arguments": [],
   "snippets.ultisnips.pythonPrompt": false,
-  "python.analysis.typeCheckingMode": "off"
+  "python.analysis.typeCheckingMode": "off",
+  "languageserver": {
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": [
+        "config",
+        "exec",
+        "--",
+        "ocamllsp"
+      ],
+      "filetypes": [
+        "ocaml",
+        "reason"
+      ],
+      "rootPatterns": [
+        "dune-project", ".git", ".ocamlformat", "*.opam"
+      ],
+      "formatter": "ocamlformat"
+    }
+  }
 }
