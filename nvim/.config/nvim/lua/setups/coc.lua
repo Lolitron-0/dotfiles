@@ -107,12 +107,6 @@ return {
     -- keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
 
-    -- Use CTRL-S for selections ranges
-    -- Requires 'textDocument/selectionRange' support of language server
-    keyset("n", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
-    keyset("x", "<C-s>", "<Plug>(coc-range-select)", { silent = true })
-
-
     -- Add `:Format` command to format current buffer
     vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
     keyset("n", "<S-M-f>", ":Format<CR>")
@@ -127,6 +121,6 @@ return {
     vim.cmd [[autocmd User CocStatusChange redrawstatus]]
 
     -- Search workspace symbols
-    keyset("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
+    -- keyset("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
   end
 }

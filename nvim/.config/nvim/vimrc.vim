@@ -37,6 +37,7 @@ nmap <C-Left> <C-h>
 nmap <C-Down> <C-j>
 nmap <C-Up> <C-k>
 nmap <C-Right> <C-l>
+nmap <C-s> <CMD>wa<CR>
 
 syntax on
 

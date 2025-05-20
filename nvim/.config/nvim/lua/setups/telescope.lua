@@ -33,5 +33,7 @@ return {
     vim.keymap.set('n', '<space>g', builtin.live_grep, {})
     vim.keymap.set('n', '<space>h', builtin.help_tags, {})
     vim.keymap.set('n', '<space>r', function() extensions.coc.references {} end, {})
+    vim.keymap.set('n', '<space>s', function() extensions.coc.workspace_symbols {} end, {})
+    vim.keymap.set('n', '<space>c', function() extensions.coc.document_symbols {} end, {})
   end
 }
