@@ -6,7 +6,7 @@
 	font-size: 17px;
 	min-height: 0px;
 	text-shadow: alpha(@theme_text_color, 0.6) 0px 0px 5px;
-	background: black;
+	background: alpha(black, 0.3)
 }
 
 
@@ -23,7 +23,6 @@ tooltip {
 	border-style: solid;
 	border-color: shade(alpha(@theme_text_colors, 0.9), 1.25);
 }
-
 
 #workspaces button {
 	box-shadow: none;
@@ -139,15 +138,14 @@ tooltip {
 }
 
 #battery.discharging.warning {
-	color: @orange_1
+  color: #ff9d00;
 }
 
 #battery.charging.warning {
 }
 
 #battery.discharging.critical {
-	color: @red_1;
-	font-size: 50pt;
+  color: #ff0000;
 }
 
 

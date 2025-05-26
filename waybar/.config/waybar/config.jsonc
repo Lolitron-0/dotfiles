@@ -11,26 +11,30 @@
 	"modules-left": [
 		"custom/logo",
 		"hyprland/workspaces",
+		"sway/workspaces",
+		"hyprland/window",
+    "sway/window",
 		"cava"
 	],
 	"modules-center": [
-		"hyprland/window"
+    "clock"
 	],
 	"modules-right": [
 		"pulseaudio",
 		"pulseaudio/slider",
 		"hyprland/language",
-		"battery",
+		"sway/language",
+    "battery",
 		"clock",
 		"tray"
 	],
-	"wlr/workspaces": {
+	"sway/workspaces": {
 		"format": "{icon}",
 		"format-icons": {
 			"1": "",
 			"2": "",
 			"3": "",
-			"active": "",
+			"focused": "",
 			"default": "",
 			"urgent": ""
 		},
@@ -76,6 +80,10 @@
 		"format": " {icon} ",
 		"tooltip-format": "{capacity}% - {timeTo}"
 	},
+  "upower" : {
+    "format" : "",
+    "tooltip-padding": 1
+  },
 	"clock": {
 		"actions": {
 			"on-click-backward": "tz_down",
@@ -117,13 +125,25 @@
 		"interval": 10
 	},
 	"custom/logo": {
-		"exec": "echo ' '",
-		"exec-on-event": false,
-		"format": "{}",
+		"format": " ",
 		"on-double-click": "wlogout -b 2 -m 50",
 		"tooltip": false
 	},
+  "custom/separator" : {
+    "format" : "| "
+  },
 	"hyprland/window": {
+		"format": "{}",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "󰈹 $1",
+			"(.*)[Tt]elegram(.*)": " Telegram",
+			"(.*)nvim": " nvim",
+			"(.*)Steam": "󰓓 Steam"
+		},
+		"separate-outputs": true,
+		"max-length": 60
+	},
+	"sway/window": {
 		"format": "{}",
 		"rewrite": {
 			"(.*) — Mozilla Firefox": "󰈹 $1",

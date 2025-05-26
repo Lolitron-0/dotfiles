@@ -17,6 +17,8 @@ SUPPORTED_CONFIGS=(
   waybar
   wlogout
   zsh
+  sway
+  swaylock
 )
 
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then

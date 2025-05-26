@@ -125,3 +125,9 @@ export NVM_DIR="$HOME/.nvm"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/niten/.dart-cli-completion/zsh-config.zsh ]] && . /home/niten/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
