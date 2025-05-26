@@ -122,6 +122,7 @@ return packer.startup(function(use)
   }
 
   use { 'elkowar/yuck.vim' }
+  use { 'RaafatTurki/hex.nvim', config = function() require 'hex'.setup() end }
 
   use {
     'nvim-lualine/lualine.nvim',

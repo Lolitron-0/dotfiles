@@ -4,9 +4,9 @@
 	"position": "top",
 	"gtk-layer-shell": true,
 	"wlr-layer-shell": false,
-	"margin-top": 10,
-	"margin-left": 10,
-	"margin-right": 10,
+	"margin-top": 3,
+	"margin-left": 3,
+	"margin-right": 3,
 	"reload_style_on_change": true,
 	"modules-left": [
 		"custom/logo",
