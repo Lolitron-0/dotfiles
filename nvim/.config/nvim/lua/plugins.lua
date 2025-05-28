@@ -264,7 +264,7 @@ return packer.startup(function(use)
 
   use "sindrets/diffview.nvim"
 
-  use 'Exafunction/codeium.vim'
+  -- use 'Exafunction/codeium.vim'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
