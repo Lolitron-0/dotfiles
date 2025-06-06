@@ -16,12 +16,10 @@ window#waybar {
 
 
 tooltip {
-	background: @theme_unfocused_base_color;
+	/* background: @theme_unfocused_base_color; */
 	color: @theme_text_color;
-	border-radius: 10px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: shade(alpha(@theme_text_colors, 0.9), 1.25);
+	border-radius: 5px;
+  box-shadow: none;
 }
 
 #workspaces button {
