@@ -23,6 +23,7 @@ gaps inner 3
 default_border pixel 1
 
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id swayidle timeout 600 'swaylock'
 exec --no-startup-id swayidle timeout 660 'systemctl sleep'
 exec --no-startup-id mako

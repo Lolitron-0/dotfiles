@@ -25,7 +25,6 @@
     "hyprland/language",
     "sway/language",
     "battery",
-    "clock",
     "tray"
   ],
   "sway/workspaces": {
