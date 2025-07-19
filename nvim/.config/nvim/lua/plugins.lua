@@ -224,6 +224,8 @@ return packer.startup(function(use)
     end
   }
 
+  use { "Exafunction/windsurf.vim" }
+
   use { 'rebelot/kanagawa.nvim' }
   use { 'ellisonleao/gruvbox.nvim',
     config = function()
