@@ -29,7 +29,7 @@ return {
     local builtin = require('telescope.builtin')
     local extensions = require('telescope').extensions
 
-    vim.keymap.set('n', '<space>f', ":Telescope file_browser<cr>", {})
+    vim.keymap.set('n', '<space>f', ":Telescope find_files<cr>", {})
     vim.keymap.set('n', '<space>g', builtin.live_grep, {})
     vim.keymap.set('n', '<space>h', builtin.help_tags, {})
     vim.keymap.set('n', '<space>r', function() extensions.coc.references {} end, {})
