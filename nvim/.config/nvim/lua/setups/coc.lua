@@ -35,6 +35,8 @@ return {
     keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
     keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
 
+    keyset("n", "<F4>", function() vim.cmd("CocCommand clangd.switchSourceHeader") end, { silent = true })
+
 
     function _G.show_docs()
       local cw = vim.fn.expand('<cword>')
