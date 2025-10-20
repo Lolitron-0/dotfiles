@@ -240,11 +240,11 @@ return packer.startup(function(use)
   use { 'ErichDonGubler/vim-sublime-monokai' }
   use { "folke/tokyonight.nvim" }
   use { 'shaunsingh/nord.nvim' }
-  use { "catppuccin/nvim", as = "catppuccin",
-    config = function()
-      require('catppuccin').setup({ flavour = "mocha" })
-    end
-  }
+  -- use { "catppuccin/nvim", as = "catppuccin",
+  --   config = function()
+  --     require('catppuccin').setup({ flavour = "mocha" })
+  --   end
+  -- }
 
   use { "xiyaowong/transparent.nvim", config = function()
     vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
@@ -263,8 +263,11 @@ return packer.startup(function(use)
     vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
   end }
 
-
   use "sindrets/diffview.nvim"
+
+  use { "sphamba/smear-cursor.nvim", config = function()
+    require('smear_cursor').setup()
+  end }
 
   -- use 'Exafunction/codeium.vim'
 
