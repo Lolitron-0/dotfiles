@@ -122,7 +122,7 @@ return packer.startup(function(use)
   }
 
   use { 'elkowar/yuck.vim' }
-  use { 'RaafatTurki/hex.nvim', config = function() require 'hex'.setup() end }
+  -- use { 'RaafatTurki/hex.nvim', config = function() require 'hex'.setup() end }
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -261,6 +261,11 @@ return packer.startup(function(use)
     require('transparent').clear_prefix('Dashboard')
     require('transparent').clear_prefix('CursorLine')
     vim.cmd [[hi CursorLine ctermbg=None guibg=None term=underline gui=underline]]
+  end }
+
+  use {"3rd/image.nvim", config = function() 
+    require('image').setup{
+    }
   end }
 
   use "sindrets/diffview.nvim"
