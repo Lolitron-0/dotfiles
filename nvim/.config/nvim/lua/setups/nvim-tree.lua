@@ -38,9 +38,11 @@ return {
     vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }
     vim.g.nvim_tree_lsp_diagnostics = 1
 
-    -- custom command
-    vim.api.nvim_create_user_command('NvimTree', function()
-      vim.cmd [[:NvimTreeOpen]]
-    end, {})
+    local ff = function()
+      vim.cmd [[:NvimTreeFindFile]]
+    end
+    -- custom commands
+    vim.api.nvim_create_user_command('NvimTree', ff, {})
+    vim.api.nvim_create_user_command('NT', ff, {})
   end
 }

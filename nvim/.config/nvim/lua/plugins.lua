@@ -196,10 +196,18 @@ return packer.startup(function(use)
     end
   }
 
-  use({
-    "aserowy/tmux.nvim",
-    config = function() return require("tmux").setup() end
-  })
+  use { "alexghergh/nvim-tmux-navigation", config = function()
+      require'nvim-tmux-navigation'.setup {
+        disable_when_zoomed = true, -- defaults to false
+        keybindings = {
+            left = "<C-Left>",
+            down = "<C-Down>",
+            up = "<C-Up>",
+            right = "<C-Right>",
+        }
+      }
+    end
+  }
 
   use {
     "ahmedkhalf/project.nvim",
