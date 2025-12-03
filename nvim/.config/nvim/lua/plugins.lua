@@ -142,6 +142,7 @@ return packer.startup(function(use)
     event = "VimEnter",
     config = function()
       require("drop").setup {
+        screensaver = 1000 * 60 * 5,
         themes = {
           { theme = "new_year", month = 1, day = 1 },
           { theme = "valentines_day", month = 2, day = 14 },
