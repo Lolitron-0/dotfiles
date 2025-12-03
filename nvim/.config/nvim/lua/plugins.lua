@@ -142,7 +142,21 @@ return packer.startup(function(use)
     event = "VimEnter",
     config = function()
       require("drop").setup {
-        theme = "leaves", -- "leaves", "snow", "stars", "xmas", "spring", "summer"
+        themes = {
+          { theme = "new_year", month = 1, day = 1 },
+          { theme = "valentines_day", month = 2, day = 14 },
+          { theme = "st_patricks_day", month = 3, day = 17 },
+          { theme = "easter", holiday = "easter" },
+          { theme = "april_fools", month = 4, day = 1 },
+          { theme = "us_independence_day", month = 7, day = 4 },
+          { theme = "halloween", month = 10, day = 31 },
+          { theme = "us_thanksgiving", holiday = "us_thanksgiving" },
+          { theme = "xmas", from = { month = 12, day = 24 }, to = { month = 12, day = 25 } },
+          { theme = "leaves", from = { month = 9, day = 1 }, to = { month = 11, day = 30 } },
+          { theme = "snow", from = { month = 12, day = 1 }, to = { month = 3, day = 29 } },
+          { theme = "spring", from = { month = 3, day = 1 }, to = { month = 5, day = 31 } },
+          { theme = "summer", from = { month = 6, day = 1 }, to = { month = 8, day = 31 } },
+        },
         filetypes = { --[[ "dashboard", ]] "alpha", "starter" },
       }
     end,
