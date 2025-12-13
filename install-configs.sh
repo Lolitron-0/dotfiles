@@ -19,6 +19,7 @@ SUPPORTED_CONFIGS=(
   zsh
   sway
   swaylock
+  p10k
 )
 
 if [[ $# -eq 0 ]] || [[ $1 == '-h' ]]; then

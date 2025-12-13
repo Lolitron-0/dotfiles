@@ -28,7 +28,7 @@ exec --no-startup-id swayidle timeout 600 'swaylock'
 exec --no-startup-id swayidle timeout 660 'systemctl sleep'
 exec --no-startup-id mako
 exec --no-startup-id waybar
-exec --no-startup-id batsignal -b -f 100 -p -d 3
+exec --no-startup-id batsignal -b -f 100 -d 3
 
 set $up k
 set $down j
